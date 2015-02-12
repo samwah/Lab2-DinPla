@@ -18,28 +18,27 @@
 		<div class="row">
 			<div class="banner">
 				<h1>HOMELETTE</h1>
+				From the best chefs in the world directly into your kitchen
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-2" id="myDinnerView"> <!-- My dinner -->
 				<div class="row">
-					My dinner
+					<h2>My dinner</h2>
 				</div>
 				<div class="row">
-					<div>
+					<div class="col-md-4">
 						People: <span id="numberOfGuests"></span>
 					</div>
-					<div>
+					<div class="col-md-8">
 		          		<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
 						<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
 					</div>
 				</div>
-				<div class="row">
-					<div class="banner">
+				<div class="row" style="background-color:#ddd">
 						<div class="col-md-8">Dish Name</div>
 						<div class="col-md-4">Cost</div>
-					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-8">Pending</div>
@@ -64,7 +63,7 @@
 					<hr>
 					<form>
 						<input type="text" placeholder="Enter key words"></input>
-						<input type="submit" value="search"></input>
+						<button class="btn">search</button></input>
 						<select id="dishType">
 						  <option value="main dish">Main</option>
 						  <option value="starter">Starter</option>
