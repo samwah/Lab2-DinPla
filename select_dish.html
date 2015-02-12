@@ -9,17 +9,20 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
 
   </head>
   <body>
-	<div class="container" style="background-color:red">
+	<div class="container">
 
 		<div class="row">
-			<h1>HOMELETTE</h1>
+			<div class="banner">
+				<h1>HOMELETTE</h1>
+			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-2" id="myDinnerView" style="background-color:green"> <!-- My dinner -->
+			<div class="col-md-2" id="myDinnerView"> <!-- My dinner -->
 				<div class="row">
 					My dinner
 				</div>
@@ -62,23 +65,20 @@
 					<form>
 						<input type="text" placeholder="Enter key words"></input>
 						<input type="submit" value="search"></input>
-						<select>
-						  <option value="volvo">Main</option>
-						  <option value="saab">Saab</option>
-						  <option value="mercedes">Mercedes</option>
-						  <option value="audi">Audi</option>
+						<select id="dishType">
+						  <option value="main dish">Main</option>
+						  <option value="starter">Starter</option>
+						  <option value="dessert">Dessert</option>
 						</select>
 					</form>
 				</div>
 				<div class="row" style="background-color:white">
-					lists
+					<div id="dishList">
+					</div>
 				</div>
 				
 			</div>
 		</div>
-
-
-
 	</div>
 
 
