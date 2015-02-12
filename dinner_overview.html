@@ -24,22 +24,32 @@
 
 		<div class="row">
 
-			<div class="col-md-10"  id="exampleView"> <!-- search and list -->
+			<div class="col-md-12"  id="previewView"> <!-- search and list -->
 
 				<div class="row" style="background-color:#f1c745">
-					SELECT DISH
-					<hr>
+					<div class="col-md-10">
+						<h2>My Dinner: <span id="numberOfGuests"></span> people</h2>
+					</div>
+					<div class="col-md-2">
+						<button class="btn">go back and edit dinner</button>
+					</div>
 					<form>
-						<select id="dishType">
-						  <option value="main dish">Main</option>
-						  <option value="starter">Starter</option>
-						  <option value="dessert">Dessert</option>
-						</select>
+						<input type="hidden" id="dishType" value="starter"/>
 					</form>
 				</div>
 				<div class="row" style="background-color:white">
-					<div id="dishList">
+					<div class="col-md-11">
+						<div id="dishList">
+						</div>
 					</div>
+					<div class="col-md-1">
+						<h2>Total price:</h2>
+						<div id="totalprice">
+						</div>
+					</div>
+				</div>
+				<div class="row" style="background-color:white">
+					<button class="btn">Print Full recipe</button>
 				</div>
 				
 			</div>
@@ -57,6 +67,7 @@
 	<script src="js/model/dinnerModel.js"></script>
 	<script src="js/view/myDinnerView.js"></script>
 	<script src="js/view/exampleView.js"></script>
+	<script src="js/view/previewView.js"></script>
 	<script src="js/view/exampleViewController.js"></script>
   </body>
 </html>
