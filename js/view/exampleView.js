@@ -10,8 +10,5 @@ var ExampleView = function (container, model) {
 	this.numberOfGuests.val(model.getNumberOfGuests());
 	this.numberOfGuests.html(this.numberOfGuests.val());
 	
-
-	this.plusButton.
-	$('#plusGuest').click()
 }
  
