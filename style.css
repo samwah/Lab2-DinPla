@@ -16,21 +16,46 @@ h2 {
 h3 {
 	font-size: 1em;
 }
-
+.row {
+	border: solid #000000 2px;
+}
 .btn {
-	background-color: #f6a800;
-	color: black;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	-webkit-box-shadow: 2px 2px 0px #666666;
+	-moz-box-shadow: 2px 2px 0px #666666;
+	box-shadow: 2px 2px 0px #666666;
+	color: #000000;
+	background: #f6a800;
+	border: solid #000000 2px;
+	text-decoration: none;
+	padding: 3px;
 }
 
 .banner {
 	background-color: #d5d5d5;
 	color: black;
+	border-style: solid;
+	border-width: 2px;
 }
+
 .ingredients {
 	background-color: #cf9c00;
 	color: black;
 }
+
 .dishItem {
 	text-align: center;
 	padding-top: 100px;
+}
+
+.border {
+
+}
+
+.glyphicon-minus{
+}
+
+.glyphicon-plus{
 }
