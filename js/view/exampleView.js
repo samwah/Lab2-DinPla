@@ -1,5 +1,5 @@
 //ExampleView Object constructor
-var ExampleView = function (container) {
+var ExampleView = function (container, model) {
 	
 	// Get all the relevant elements of the view (ones that show data
   	// and/or ones that responed to interaction)
@@ -7,7 +7,8 @@ var ExampleView = function (container) {
 	this.plusButton = container.find("#plusGuest");
 	this.minusButton = container.find("#minusGuest");
 	
-	this.numberOfGuests.html(getNumberOfGuests());
+	this.numberOfGuests.val(model.getNumberOfGuests());
+	this.numberOfGuests.html(this.numberOfGuests.val());
 	
 }
  
