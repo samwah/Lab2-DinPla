@@ -1,0 +1,26 @@
+body {
+	background-color: white;
+	color: black;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 0.8em;
+}
+
+.btn {
+	background-color: #f6a800;
+	color: black;
+}
+
+.banner {
+	background-color: #d5d5d5;
+	color: black;
+}
+.ingredients {
+	background-color: #cf9c00;
+	color: black;
+}
