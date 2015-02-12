@@ -18,6 +18,7 @@ h3 {
 }
 .row {
 	border: solid #000000 2px;
+	padding: 10px;
 }
 .btn {
 	-webkit-border-radius: 0;
@@ -47,7 +48,8 @@ h3 {
 
 .dishItem {
 	text-align: center;
-	padding-top: 100px;
+	padding-top: 50px;
+	margin: 5px;
 }
 
 .border {

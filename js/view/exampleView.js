@@ -16,7 +16,7 @@ var ExampleView = function (container, model) {
 
 	var dishes = model.getAllDishes(this.dishType.val());
 
-	for(i = 0; i < dishes.length; i++ ) {
+	for(i = 0; i < dishes.length; i++) {
 		this.dishList.append("<div class='col-md-3'><div class='dishItem'>"+
 			"<div class='row'><img src='images/"+ dishes[i].image +"'/></div>"+
 			"<div class='row'><h2>"+ dishes[i].name +"</h2></div>"+
