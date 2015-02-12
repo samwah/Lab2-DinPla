@@ -5,11 +5,18 @@ body {
 
 h1 {
 	font-size: 2.5em;
+	font-weight: bold;
 }
 
 h2 {
 	font-size: 0.8em;
+	font-weight: bold;
 }
+
+h3 {
+	font-size: 1.5em;
+}
+
 
 .btn {
 	background-color: #f6a800;
