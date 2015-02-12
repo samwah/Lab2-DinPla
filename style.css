@@ -17,7 +17,6 @@ h3 {
 	font-size: 1em;
 }
 
-
 .btn {
 	background-color: #f6a800;
 	color: black;
@@ -31,6 +30,6 @@ h3 {
 	background-color: #cf9c00;
 	color: black;
 }
-#dishItem {
+.dishItem {
 	text-align: center;
 }
