@@ -5,10 +5,20 @@ var DinnerModel = function() {
 	// and selected dinner options for dinner menu
 	var numberOfGuests = 2;
 	var menu = [];
+	var observers = [];
 
+
+	this.addObserver = function(observer) {
+		
+	}
+
+	var notifyObservers = function(obj) {
+
+	}
 
 	this.setNumberOfGuests = function(num) {
 		numberOfGuests = num;
+		notifyObservers(); //binish 'im
 	}
 
 	// should return 

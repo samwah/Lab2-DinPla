@@ -3,7 +3,13 @@ $(function() {
 	var model = new DinnerModel();
 	
 	//And create the needed controllers and views
+
+	//testing...
 	var exampleView = new ExampleView($("#exampleView"), model);
+	var exampleViewController = new ExampleViewController(exampleView,model);
+
+	var myDinnerView 
+
 	var previewView = new PreviewView($("#previewView"), model);
 	var preperationView = new PreperationView($("#preperationView"), model);
 	var myDinnerView = new MyDinnerView($("#myDinnerView"), model);
