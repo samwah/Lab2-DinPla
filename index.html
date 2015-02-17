@@ -11,32 +11,112 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link href="style.css" rel="stylesheet" type="text/css">
   </head>
+
   <body>
-	<div class="container-fluid">
-		<div class="row" style="background-color: orange">
-			<div class="col-md-4">
-				<div><h1>Homelette</h1></div>
-			</div>
-			<div class="col-md-8">
-			<div><h2>From the best chefs in the world directly into your kitchen</h2></div></div>
+  	<!-- Homelette Banner bar -->
+  	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+	  	<div class="col-md-3 col-md-offset-1">
+		    <h1>Homelette</h1>
 		</div>
-	</div>
+		<div class="col-md-8">
+		    <h2>From the best chefs in the world directly into your kitchen</h2>
+		</div>
+	  </div>
+	</nav>
 
+	<!-- START CONTAINER -->
 	<div class="container">
-		<div class="row">
-			<div class="col-md-4"><h2>A Home Dinner Service</h2></div>
+
+	<!-- notes1
+	Man kanske kan ha flera "main" med olika id som man "byter ut" (show/hide) om man ska byta hel sidlayout. 
+	Kanske med js med jquery till id:n $(#welcomePage) med hjälp av CSS 
+	style.display="visible" (eller "")
+	style.display="hidden" (eller "none") 
+
+	men då laddas ju iof. mycket sidan först ist för helt dynamsikt, kanske blir långsamt. nooooo.....
+	-->
+
+	<!-- notes2
+	Man kanske ska ha en view som bygger enskilda dishes som komponenter. 
+	Så slipper man skriva om den koden i olika views. den är samma i 4/6 "slides"
+	-->
+
+	<!-- note2:1
+	Man kanske ska varje note med man kanske.
+	-->
+	<!--  note2:2
+	Man kanske ska en view för varje enhet, ruta, osv. som t.ex. indigrienser har en egen, så kan dom laddas
+	in modulärt av en view över den. En buttonbuilder view också...
+	--> 
+
+	<!-- start welcomePage -->
+		<div class="row" id="welcomePage">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-4"><h2>A Home Dinner Service</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus sollicitudin lacus, vitae venenatis diam interdum nec. Pellentesque efficitur lacinia sollicitudin. Aenean hendrerit sapien vel egestas lobortis. Nullam semper leo et lacinia porta. In non facilisis elit. Pellentesque diam risus, dignissim vitae lorem ac, dignissim semper enim.
+				</br>
+				</br>
+				</br>
+				Start quickly
+				</br>
+				<a href="select_dish.html" class="btn">Create new dinner</a>
+				</div>
+			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus sollicitudin lacus, vitae venenatis diam interdum nec. Pellentesque efficitur lacinia sollicitudin. Aenean hendrerit sapien vel egestas lobortis. Nullam semper leo et lacinia porta. In non facilisis elit. Pellentesque diam risus, dignissim vitae lorem ac, dignissim semper enim.</div>
+	<!-- end welcomePage -->
+
+	<!-- start mainPage -->
+		<div class="row" id="mainPage">
+			<!-- Current selection. +- participants... -->
+			<div class="col-md-3" id="leftCol1">
+			</div>
+
+			<!-- Main column-->
+			<div class="col-md-9" id="mainCol1">
+
+				<!-- First row, searchBar etc -->
+				<div class="row" id="topRow1">
+				</div>
+
+				<!-- Main row, all dishes -->
+				<div class="row" id="midRow1">
+					<!-- dishes go here -->
+				</div>
+
+			</div>
+
 		</div>
-		<div class="row">
-			<div class="col-md-4">start quickly</div>
+	<!-- end mainPage -->
+	<!-- start lastPage -->
+		<div class="row" id="lastPage">
+
+			<!-- Main column-->
+			<div class="col-md-9" id="mainCol1">
+
+				<!-- First row, dinner+back-btn etc. -->
+				<div class="row" id="topRow1">
+				</div>
+
+				<!-- Main row, all dishes, ingredients final prep etc. -->
+				<div class="row" id="midRow1">
+				</div>
+
 		</div>
-		<div class="row">
-			<div class="col-md-4"><a href="select_dish.html" class="btn">Create new dinner</a></div>
-		</div>
+	<!-- end lastPage -->
+
+	<!-- END CONTAINER -->
 	</div>
 
+
+
+	<!-- Column 2 -->
+
+	<!-- Layout2 -->
+	
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
