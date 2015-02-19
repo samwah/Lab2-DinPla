@@ -9,11 +9,18 @@ var DinnerModel = function() {
 
 
 	this.addObserver = function(observer) {
-		
+		observers.push(observer);
 	}
 
 	var notifyObservers = function(obj) {
-
+		for (ob in observers){
+			if(obj == null){
+				ob.update();
+			}
+			else{
+				ob.update(obj);
+			}
+		}
 	}
 
 	this.setNumberOfGuests = function(num) {
