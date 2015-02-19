@@ -13,12 +13,12 @@ var DinnerModel = function() {
 	}
 
 	var notifyObservers = function(obj) {
-		for (ob in observers){
+		for (i=1; i <= observers.length; i++){
 			if(obj == null){
-				ob.update();
+				observers[i].update();
 			}
 			else{
-				ob.update(obj);
+				observers[i].update(obj);
 			}
 		}
 	}
