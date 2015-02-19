@@ -73,6 +73,36 @@
 		<div class="row" id="mainPage">
 			<!-- Current selection. +- participants... -->
 			<div class="col-md-3" id="leftCol1">
+				<div class="row">
+					<h2>My dinner</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						People: <span id="numberOfGuests"></span>
+					</div>
+					<div class="col-md-8">
+		          		<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+						<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+					</div>
+				</div>
+				<div class="row" style="background-color:#ddd">
+						<div class="col-md-8">Dish Name</div>
+						<div class="col-md-4">Cost</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">Pending</div>
+					<div class="col-md-4">0.00</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">-</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">SEK</div>
+					<div class="col-md-4">0.00</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12"><button class="btn">Confirm Dinner</button></div>
+				</div>
 			</div>
 
 			<!-- Main column-->
@@ -126,7 +156,9 @@
 	<!-- The application JavaScript code -->
 	<script src="js/app.js"></script>
 	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/myDinnerView.js"></script>
+	<script src="js/view/myDinnerController.js"></script>
 	<script src="js/view/exampleView.js"></script>
-	<script src="js/view/exampleViewController.js"></script>
+	<!-- <script src="js/view/exampleViewController.js"></script> -->
   </body>
 </html>

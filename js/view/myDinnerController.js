@@ -1,5 +1,5 @@
 //ExampleViewController Object constructor
-var ExampleViewController = function(view, model ) {
+var ExampleViewController = function(view, model) {
  
  view.plusButton.click(function(){
  model.setNumberOfGuests(model.getNumberOfGuests() + 1);
@@ -13,9 +13,8 @@ var ExampleViewController = function(view, model ) {
 
 //VV Real code VV
 var MyDinnerController = function(view,model) {
-	view.continueButton.click(function(){
+	//view.continueButton.click(function(){
 		
 		//Gömmer/Visar förstasidan? Kanske "scrollar" ner till content
-		view.MyDinnerView(view.togglePage()) 
-	})
-}
+		//view.MyDinnerView(view.togglePage()) 
+	}
