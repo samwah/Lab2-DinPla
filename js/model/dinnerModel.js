@@ -32,7 +32,7 @@ var DinnerModel = function() {
 
 	this.setNumberOfGuests = function(num) {
 		numberOfGuests = num;
-		this.notifyObservers(); //binish 'im
+		//this.notifyObservers(); //binish 'im
 	}
 
 	// should return 
@@ -57,11 +57,13 @@ var DinnerModel = function() {
 	//Returns all ingredients for all the dishes on the this.menu.
 	this.getAllIngredients = function() {
 		var list_ingredients = [];
+		//var list_ingredients2 = [123,12123];
+		//list_ingredients = list_ingredients.concat(list_ingredients2);
 
 		for(key in this.menu){
-			list_ingredients.concat(this.menu[key].ingredients);
+			list_ingredients = list_ingredients.concat(this.menu[key].ingredients);
 		}
-		alert(list_ingredients[1]);
+
 		return list_ingredients;
 	}
 
@@ -70,15 +72,10 @@ var DinnerModel = function() {
 		var list_ingredients = this.getAllIngredients();
 		var sum = 0;
 
-		//alert("dsafdsf");
-
-		alert("sad "+list_ingredients.length);
-
-		for(ingredient in list_ingredients){
-			alert("ingredient.price");
-			sum = sum + list_ingredients[ingredient].price*numberOfGuests;
+		for(ing in list_ingredients){
+			//alert("ingredient.price");
+			sum = sum + list_ingredients[ing].price*numberOfGuests;
 		}
-		//alert(sum);
 
 		return sum;
 	}

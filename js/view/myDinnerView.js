@@ -47,8 +47,8 @@ var MyDinnerView = function (container, model) {
 		updatePending();
 	};
 
-	this.updateGuests();
-	updatePending();
+	//this.updateGuests();
+	//updatePending();
 
 }
  
