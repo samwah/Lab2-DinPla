@@ -4,9 +4,8 @@ var DinnerModel = function() {
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
 	var numberOfGuests = 2;
-	var menu = [];
+	this.menu = [];
 	this.observers = [];
-
 
 	this.addObserver = function(observer) {
 		this.observers.push(observer);
@@ -28,54 +27,60 @@ var DinnerModel = function() {
 		return numberOfGuests;
 	}
 
-	//Returns the dish that is on the menu for selected type 
+	//Returns the dish that is on the this.menu for selected type 
 	this.getSelectedDish = function(type) {
-		for(key in menu){
-			if(menu[key].type == type){
-				return menu[key];
+		for(key in this.menu){
+			if(this.menu[key].type == type){
+				return this.menu[key];
 			}
 		}
 	}
 
-	//Returns all the dishes on the menu.
+	//Returns all the dishes on the this.menu.
 	this.getFullMenu = function() {
-		return menu;
+		return this.menu;
 	}
 
-	//Returns all ingredients for all the dishes on the menu.
+	//Returns all ingredients for all the dishes on the this.menu.
 	this.getAllIngredients = function() {
 		var list_ingredients = [];
 
-		for(key in menu){
-			list_ingredients.concat(menu[key].ingredients);
+		for(key in this.menu){
+			list_ingredients.concat(this.menu[key].ingredients);
 		}
-
+		alert(list_ingredients[1]);
 		return list_ingredients;
 	}
 
-	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
+	//Returns the total price of the this.menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
-		var list_ingredients = getAllIngredients();
+		var list_ingredients = this.getAllIngredients();
 		var sum = 0;
 
+		//alert("dsafdsf");
+
+		alert("sad "+list_ingredients.length);
+
 		for(ingredient in list_ingredients){
-			sum += ingredient.price*numberOfGuests;
+			alert("ingredient.price");
+			sum = sum + list_ingredients[ingredient].price*numberOfGuests;
 		}
+		//alert(sum);
 
 		return sum;
 	}
 
-	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
-	//it is removed from the menu and the new one added.
+	//Adds the passed dish to the this.menu. If the dish of that type already exists on the this.menu
+	//it is removed from the this.menu and the new one added.
 	this.addDishToMenu = function(id) {
-		menu.push(getDish(id));
+		this.menu.push(this.getDish(id));
 	}
 
-	//Removes dish from menu
+	//Removes dish from this.menu
 	this.removeDishFromMenu = function(id) {
-	  for(key in menu){
-			if(menu[key].id == id) {
-				menu.splice(key,1);
+	  for(key in this.menu){
+			if(this.menu[key].id == id) {
+				this.menu.splice(key,1);
 			}
 		}
 	}

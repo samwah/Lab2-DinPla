@@ -6,7 +6,8 @@ var MyDinnerView = function (container, model) {
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.plusButton = container.find("#plusGuest");
 	this.minusButton = container.find("#minusGuest");
-	this.Debug = container.find("#Debug");
+	this.pendingCost = container.find("#pendingCost");
+	this.pendingList = container.find("#pendingList");
 
 	
 	this.numberOfGuests.val(model.getNumberOfGuests());
@@ -19,11 +20,35 @@ var MyDinnerView = function (container, model) {
 		this.numberOfGuests.innerHTML = model.getNumberOfGuests();
 	};
 
+	var updatePending = function() {
+
+		//this.pendingList.innerHTML = "<ul>";
+		var output = "<ul>";
+
+		for (item in model.menu){
+			var dish = model.getSelectedDish("starter");
+			//this.pendingList.innerHTML = "li";
+			//this.pendingList.append("<li>"+item.name+"<li>");
+			//this.pendingList.append("dsafsd");
+			//output = output + "<li>"+dish.name+"</li>";
+			output = output + "<li>"+model.menu[item].name+"</li>";
+		}
+		output = output + "</ul>";
+
+		this.pendingList.innerHTML = output;
+
+		//this.pendingList.append("</ul>");
+
+		this.pendingCost.innerHTML = model.getTotalMenuPrice();
+	};
+
 
 	this.update = function(obj) {
 		updateGuests();
+		updatePending();
 	};
 
 	updateGuests();
+	updatePending();
 }
  
