@@ -14,9 +14,14 @@ var MyDinnerView = function (container, model) {
 
 	model.addObserver(this);
 
+//<<<<<<< HEAD
 	this.updateGuests = function() {
 		this.numberOfGuests.val(model.getNumberOfGuests());
 		this.numberOfGuests.html(this.numberOfGuests.val());
+//=======
+//	var updateGuests = function() {
+//		//this.numberOfGuests.val(model.getNumberOfGuests());
+//>>>>>>> origin/Lab3
 	};
 
 	this.update = function(obj) {
