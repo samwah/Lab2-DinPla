@@ -6,6 +6,19 @@ var DinnerModel = function() {
 	var numberOfGuests = 2;
 	this.menu = [];
 	this.observers = [];
+	var currentView = 1;
+	
+	this.activeView = function(view) {
+		//1 = firstpage
+		//2 = mainpage
+	
+		if(view!=undefined){
+			currentView = view;
+			this.notifyObservers();
+		}
+
+		return currentView
+	}
 
 	this.addObserver = function(observer) {
 		this.observers.push(observer);
