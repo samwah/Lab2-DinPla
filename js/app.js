@@ -20,6 +20,9 @@ $(function() {
 	var welcomeView = new WelcomeView($("#welcomeView"), model);
 	var welcomeViewController = new WelcomeViewController(welcomeView,model);
 
+	var mainView = new MainView($("#mainView"), model);
+	var mainViewController = new MainViewController(mainView,model);
+
 //old stuff
 /*
 	var previewView = new PreviewView($("#previewView"), model);

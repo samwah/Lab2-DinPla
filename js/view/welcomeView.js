@@ -27,4 +27,5 @@ var WelcomeView = function (container, model) {
 	this.update = function(obj){
 		this.updateView();
 	}
+	this.update();
 }
