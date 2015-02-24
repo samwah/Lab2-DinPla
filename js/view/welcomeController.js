@@ -1,4 +1,4 @@
-var WelcomeViewController = function(view, model) {
+var WelcomeController = function(view, model) {
  
 	 view.newDinnerButton.click(function(){
 	 	model.activeView(2);

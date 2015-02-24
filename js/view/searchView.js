@@ -45,5 +45,6 @@ var SearchView = function (container, model) {
 		this.updateView();
 	}
 
+	this.updateSearch
 	this.update();
 }

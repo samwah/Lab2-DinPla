@@ -108,30 +108,51 @@
 			<!-- Main column-->
 			<div class="col-md-9" id="mainCol1">
 
+
 				<!-- First row, searchBar etc -->
-				<div class="row" id="searchView">
-					<div class="row" style="background-color:#f1c745">
-						SELECT DISH
-						<hr>
-						<form>
-							<input type="text" placeholder="Enter key words"></input>
-							<button id="search" class="btn">search</button></input>
-							<select id="dishType">
-							  <option value="main dish">Main</option>
-							  <option value="starter">Starter</option>
-							  <option value="dessert">Dessert</option>
-							</select>
-						</form>
-					</div>
-					<div class="row" style="background-color:white">
-						<div id="dishList">
+
+
+				<div class="row" id"manyDish">
+
+					<!-- First row, searchBar etc -->
+					<div class="row" id="searchView">
+						<div class="row" style="background-color:#f1c745">
+							SELECT DISH
+							<hr>
+							<form>
+								<input type="text" placeholder="Enter key words"></input>
+								<button id="search" class="btn">search</button></input>
+								<select id="dishType">
+								  <option value="main dish">Main</option>
+								  <option value="starter">Starter</option>
+								  <option value="dessert">Dessert</option>
+								</select>
+							</form>
 						</div>
+						<div class="row" style="background-color:white">
+							<div id="dishList">
+							</div>
+						</div>
+					</div>
+
+					<!-- Main row, all dishes -->
+					<div class="row" id="midRow1">
+						<!-- dishes go here -->
+
 					</div>
 				</div>
 
-				<!-- Main row, all dishes -->
-				<div class="row" id="midRow1">
-					<!-- dishes go here -->
+				<!-- Lasagna goes here -->	
+				<div class"row" id"oneDish">
+
+					<!-- Description -->
+					<div class"col-md-6" id="oneDishCol1">
+					</div>
+
+					<!-- Ingredients -->
+					<div class"col-md-6" id="oneDishCol2">
+					</div>
+
 				</div>
 
 			</div>
@@ -174,17 +195,18 @@
 	<!-- The application JavaScript code -->
 	<script src="js/app.js"></script>
 	<script src="js/model/dinnerModel.js"></script>
+
 	<script src="js/view/myDinnerView.js"></script>
 	<script src="js/view/myDinnerController.js"></script>
 
 	<script src="js/view/welcomeView.js"></script>
-	<script src="js/view/welcomeViewController.js"></script>
+	<script src="js/view/welcomeController.js"></script>
 
 	<script src="js/view/searchView.js"></script>
 	<script src="js/view/searchController.js"></script>
 
 	<script src="js/view/mainView.js"></script>
-	<script src="js/view/mainViewController.js"></script>
+	<script src="js/view/mainController.js"></script>
 
 	<!-- <script src="js/view/exampleViewController.js"></script> -->
   </body>
