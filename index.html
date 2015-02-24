@@ -109,7 +109,24 @@
 			<div class="col-md-9" id="mainCol1">
 
 				<!-- First row, searchBar etc -->
-				<div class="row" id="topRow1">
+				<div class="row" id="searchView">
+					<div class="row" style="background-color:#f1c745">
+						SELECT DISH
+						<hr>
+						<form>
+							<input type="text" placeholder="Enter key words"></input>
+							<button id="search" class="btn">search</button></input>
+							<select id="dishType">
+							  <option value="main dish">Main</option>
+							  <option value="starter">Starter</option>
+							  <option value="dessert">Dessert</option>
+							</select>
+						</form>
+					</div>
+					<div class="row" style="background-color:white">
+						<div id="dishList">
+						</div>
+					</div>
 				</div>
 
 				<!-- Main row, all dishes -->
@@ -159,9 +176,12 @@
 	<script src="js/model/dinnerModel.js"></script>
 	<script src="js/view/myDinnerView.js"></script>
 	<script src="js/view/myDinnerController.js"></script>
-	<script src="js/view/exampleView.js"></script>
+
 	<script src="js/view/welcomeView.js"></script>
 	<script src="js/view/welcomeViewController.js"></script>
+
+	<script src="js/view/searchView.js"></script>
+	<script src="js/view/searchController.js"></script>
 
 	<script src="js/view/mainView.js"></script>
 	<script src="js/view/mainViewController.js"></script>

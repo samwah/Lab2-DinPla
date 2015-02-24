@@ -5,7 +5,7 @@ $(function() {
 	//And create the needed controllers and views
 
 	//test
-	var exampleView = new ExampleView($("#exampleView"), model);
+	//var exampleView = new ExampleView($("#exampleView"), model);
 	//var exampleViewController = new ExampleViewController(exampleView,model);
 
 
@@ -16,6 +16,9 @@ $(function() {
 
 	var myDinnerView = new MyDinnerView($("#leftCol1"), model);
 	var myDinnerController = new MyDinnerController(myDinnerView,model);
+
+	var searchView = new SearchView($("#searchView"), model);
+	var searchController = new SearchController(searchView,model);
 	
 	var welcomeView = new WelcomeView($("#welcomeView"), model);
 	var welcomeViewController = new WelcomeViewController(welcomeView,model);

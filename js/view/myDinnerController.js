@@ -12,7 +12,6 @@ var MyDinnerController = function(view, model) {
 	 	model.setNumberOfGuests(model.getNumberOfGuests() - 1);
 	 	model.notifyObservers();
 	 	//alert(model.getNumberOfGuests());
-
 	 });
 
 	$(document).on('click', '.remove_btn', function(){
