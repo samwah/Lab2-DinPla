@@ -3,6 +3,7 @@ var MyDinnerView = function (container, model) {
 	
 	// Get all the relevant elements of the view (ones that show data
   	// and/or ones that responed to interaction)
+
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.plusButton = container.find("#plusGuest");
 	this.minusButton = container.find("#minusGuest");
@@ -10,14 +11,14 @@ var MyDinnerView = function (container, model) {
 	this.pendingList = container.find("#pendingList");
 
 	
-	this.numberOfGuests.val(model.getNumberOfGuests());
-	this.numberOfGuests.html(this.numberOfGuests.val());
+	//this.numberOfGuests.val(model.getNumberOfGuests());
+	//this.numberOfGuests.html(this.numberOfGuests.val());
 
 	model.addObserver(this);
 
-	var updateGuests = function() {
-		//this.numberOfGuests.val(model.getNumberOfGuests());
-		this.numberOfGuests.innerHTML = model.getNumberOfGuests();
+	this.updateGuests = function() {
+		this.numberOfGuests.val(model.getNumberOfGuests());
+		this.numberOfGuests.html(this.numberOfGuests.val());
 	};
 
 	var updatePending = function() {
@@ -26,13 +27,11 @@ var MyDinnerView = function (container, model) {
 		var output = "<ul>";
 
 		for (item in model.menu){
-			var dish = model.getSelectedDish("starter");
-			//this.pendingList.innerHTML = "li";
-			//this.pendingList.append("<li>"+item.name+"<li>");
-			//this.pendingList.append("dsafsd");
-			//output = output + "<li>"+dish.name+"</li>";
+
 			output = output + "<li>"+model.menu[item].name+"</li>";
+
 		}
+
 		output = output + "</ul>";
 
 		this.pendingList.innerHTML = output;
@@ -50,5 +49,12 @@ var MyDinnerView = function (container, model) {
 
 	updateGuests();
 	updatePending();
+
+	this.update = function(obj) {
+		this.updateGuests();
+	};
+
+	this.updateGuests();
+	
 }
  
