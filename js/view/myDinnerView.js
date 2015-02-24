@@ -43,18 +43,12 @@ var MyDinnerView = function (container, model) {
 
 
 	this.update = function(obj) {
-		updateGuests();
+		this.updateGuests();
 		updatePending();
 	};
 
-	updateGuests();
+	this.updateGuests();
 	updatePending();
 
-	this.update = function(obj) {
-		this.updateGuests();
-	};
-
-	this.updateGuests();
-	
 }
  

@@ -17,7 +17,7 @@ $(function() {
 	var myDinnerView = new MyDinnerView($("#leftCol1"), model);
 	var myDinnerController = new MyDinnerController(myDinnerView,model);
 	
-	var welcomeView = new WelcomeView($("#mainView"), model);
+	var welcomeView = new WelcomeView($("#welcomeView"), model);
 	var welcomeViewController = new WelcomeViewController(welcomeView,model);
 
 //old stuff
