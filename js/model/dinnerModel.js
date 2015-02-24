@@ -16,7 +16,6 @@ var DinnerModel = function() {
 			currentView = view;
 			this.notifyObservers();
 		}
-
 		return currentView
 	}
 

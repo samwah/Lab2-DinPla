@@ -4,6 +4,7 @@ var WelcomeViewController = function(view, model) {
 	 	model.activeView(2);
 	 	//alert(model.getNumberOfGuests());
 
+
 	 });
 	 
 }

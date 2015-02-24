@@ -1,5 +1,5 @@
 var WelcomeView = function (container, model) {
-
+	model.addObserver(this);
 	this.newDinnerButton = container.find("#newDinnerButton");
 	//this.masterDiv = document.getElementById('welcomeView');
 	this.main = container.find("#welcomeView");
@@ -20,6 +20,7 @@ var WelcomeView = function (container, model) {
 		} else {
 			this.hideView();
 		}
+		console.log(model.activeView())
 
 	}
 
