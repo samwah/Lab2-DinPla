@@ -18,7 +18,7 @@ var MyDinnerController = function(view, model) {
 	$(document).on('click', '.remove_btn', function(){
 		var removeid = $(this).attr("id");
 		//console.log("id to remove " + removeid);
-	   	model.removeDishFromMenu(removeid);         
+	   	model.removeDishFromMenu(removeid);       
 		model.notifyObservers();
 	});
 }
