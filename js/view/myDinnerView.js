@@ -9,6 +9,8 @@ var MyDinnerView = function (container, model) {
 	this.minusButton = container.find("#minusGuest");
 	this.pendingCost = container.find("#pendingCost");
 	this.pendingList = container.find("#pendingList");
+	this.buttonlist = [];
+	console.log(this.minusButton);
 
 	
 	//this.numberOfGuests.val(model.getNumberOfGuests());
@@ -23,13 +25,19 @@ var MyDinnerView = function (container, model) {
 
 	var updatePending = function() {
 
-		//this.pendingList.innerHTML = "<ul>";
 		var output = "<ul>";
 
 		for (item in model.menu){
 
-			output = output + "<li>"+model.menu[item].name+"</li>";
+			output = output + "<li>"+model.menu[item].name+
+			" <button id='"+model.menu[item].id+"' class='remove_btn'>X</button>"+"</li>";
 
+			console.log(model.menu[item].id);
+
+			//this.buttonlist.push("asds");
+
+			//this.buttonlist.push(""+model.menu[item].id);
+			//console.log(this.buttonlist);
 		}
 
 		output = output + "</ul>";

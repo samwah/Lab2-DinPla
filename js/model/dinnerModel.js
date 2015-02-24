@@ -89,6 +89,7 @@ var DinnerModel = function() {
 	this.removeDishFromMenu = function(id) {
 	  for(key in this.menu){
 			if(this.menu[key].id == id) {
+				//console.log(key);
 				this.menu.splice(key,1);
 			}
 		}
