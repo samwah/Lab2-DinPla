@@ -15,8 +15,8 @@ var MyDinnerView = function (container, model) {
 	model.addObserver(this);
 
 	var updateGuests = function() {
-		this.numberOfGuests.val(model.getNumberOfGuests());
-		this.numberOfGuests.html = this.numberOfGuests;
+		//this.numberOfGuests.val(model.getNumberOfGuests());
+		this.numberOfGuests.innerHTML = model.getNumberOfGuests();
 	};
 
 
