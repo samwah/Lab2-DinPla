@@ -1,7 +1,7 @@
 var WelcomeViewController = function(view, model) {
  
 	 view.newDinnerButton.click(function(){
-	 	model.activeView(1);
+	 	model.activeView(2);
 	 	//alert(model.getNumberOfGuests());
 
 	 });
