@@ -72,7 +72,7 @@
 	<!-- start mainPage -->
 		<div class="row" id="mainView">
 			<!-- Current selection. +- participants... -->
-			<div class="col-md-4" id="leftCol1">
+			<div class="col-md-3" id="leftCol1">
 				<div class="row">
 					<h2>My dinner</h2>
 				</div>
@@ -106,31 +106,31 @@
 			</div>
 
 			<!-- Main column-->
-			<div class="col-md-8" id="mainCol1">
 
 				<!-- First row, searchBar etc -->
+
+			<div class="col-md-9" id="mainCol1">
 
 				<div class="row" id"manyDish">
 					<div class="col-md-12">
 					<!-- First row, searchBar etc -->
+
 						<div class="row" id="searchView">
 							<div class="col-md-12">
-								<div class="row" id="searchRow">
+								<div class="row">
 									SELECT DISH
 									<hr>
-									<form>
-										<input type="text" placeholder="Enter key words"></input>
-										<button id="search" class="btn">search</button></input>
-										<select id="dishType">
-										  <option value="main dish">Main</option>
-										  <option value="starter">Starter</option>
-										  <option value="dessert">Dessert</option>
-										</select>
-									</form>
+									<input id="searchInput" type="text" placeholder="Enter key words" value=""></input>
+									<button id="search" class="btn">search</button></input>
+									<select id="dishType">
+									  <option value="main dish">Main</option>
+									  <option value="starter">Starter</option>
+									  <option value="dessert">Dessert</option>
+									</select>
 								</div>
-								<div class="row">
-									<div id="dishList">
-									</div>
+							</div>
+							<div class="row">
+								<div id="dishList">
 								</div>
 							</div>
 						</div>
@@ -138,21 +138,31 @@
 					<!-- Main row, all dishes -->
 					<div class="row" id="midRow1">
 						<!-- dishes go here -->
-
 					</div>
+
 				</div>
 
 				<!-- Lasagna goes here -->	
-				<div class"row" id"oneDish">
+				<div class="row" id="inspectView">
 
 					<!-- Description -->
 					<div class"col-md-6" id="oneDishCol1">
+						<div id="dishSpecific">
+						</div>
+						<a id='goBack' class='btn'>back to Select dish</a>
 					</div>
 
 					<!-- Ingredients -->
 					<div class"col-md-6" id="oneDishCol2">
+						<div class="ingredients">
+								<div class="row"><h2>Ingredients for 4 people</h2></div>
+								<div class="row" id="insert_ing"></div>
+								<div class="row">
+									<div class="col-md-9"><a id="confirmDish" class="btn">Confirm Dish</a></div>
+									<div class="col-md-3" id="totalprice"></div>
+								</div>
+						</div>
 					</div>
-
 				</div>
 
 			</div>
@@ -172,6 +182,8 @@
 				<!-- Main row, all dishes, ingredients final prep etc. -->
 				<div class="row" id="midRow2">
 				</div>
+
+			</div>
 
 		</div>
 	<!-- end lastPage -->
@@ -204,6 +216,9 @@
 
 	<script src="js/view/searchView.js"></script>
 	<script src="js/view/searchController.js"></script>
+
+	<script src="js/view/inspectView.js"></script>
+	<script src="js/view/inspectController.js"></script>
 
 	<script src="js/view/mainView.js"></script>
 	<script src="js/view/mainController.js"></script>

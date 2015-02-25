@@ -1,4 +1,4 @@
-var SearchController = function(view, model) {
+var InspectController = function(view, model) {
 
 /*
 	 view.dishType.on('change',function(){
@@ -6,8 +6,15 @@ var SearchController = function(view, model) {
 	 	//alert(model.getNumberOfGuests());
 	 });
 */
+	 view.goBack.click(function(){
+	 	model.activeView(2);
+	 	model.notifyObservers();
+	 	//alert(model.getNumberOfGuests());
+	 });
 
-	 view.searchButton.click(function(){
+	 view.confirmDish.click(function(){
+	 	model.addDishToMenu(model.inspectedItem);
+	 	model.activeView(2);
 	 	model.notifyObservers();
 	 	//alert(model.getNumberOfGuests());
 	 });
