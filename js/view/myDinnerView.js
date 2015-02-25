@@ -30,7 +30,7 @@ var MyDinnerView = function (container, model) {
 
 		for (item in model.menu){
 
-			output = output + "<li>"+model.menu[item].name+
+			output = output + "<li><a class='inspect_link' id="+model.menu[item].id+">"+model.menu[item].name+"</a>"+
 			" <button id='"+model.menu[item].id+"' class='remove_btn'>X</button>"+"</li>";
 
 			console.log(model.menu[item].id);
