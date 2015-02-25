@@ -1,3 +1,4 @@
+
 body {
 	background-image: url(images/bg.jpg);
 	background-size: 100%;
@@ -19,10 +20,21 @@ h3 {
 	font-size: 1em;
 }
 
-.row {
-	background-color:rgba(255,255,255,0.5);
-	padding: 10px;
+#mainCol1 {
+	background-color:#e47d22;
 }
+
+#superContainer {
+	background-color:rgba(255,255,255,0.75);
+	outline: solid #FFFFFF 10px;
+	outline-top: solid #FFFFFF 20px;
+	outline-bottom: solid #FFFFFF 30px;
+}
+
+#leftCol1 {
+	background-color:#5a91bb;
+}
+
 
 .btn {
 	-webkit-border-radius: 0;
@@ -32,7 +44,7 @@ h3 {
 	-moz-box-shadow: 2px 2px 0px #666666;
 	box-shadow: 2px 2px 0px #666666;
 	color: #000000;
-	background: #f6a800;
+	background: #FFFFFF;
 	border: solid #000000 2px;
 	text-decoration: none;
 	padding: 3px;

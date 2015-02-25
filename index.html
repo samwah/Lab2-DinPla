@@ -26,7 +26,7 @@
 	</nav>
 
 	<!-- START CONTAINER -->
-	<div class="container">
+	<div class="container" id="superContainer">
 
 	<!-- notes1
 	Man kanske kan ha flera "main" med olika id som man "byter ut" (show/hide) om man ska byta hel sidlayout. 
@@ -72,7 +72,7 @@
 	<!-- start mainPage -->
 		<div class="row" id="mainView">
 			<!-- Current selection. +- participants... -->
-			<div class="col-md-3" id="leftCol1">
+			<div class="col-md-4" id="leftCol1">
 				<div class="row">
 					<h2>My dinner</h2>
 				</div>
@@ -85,7 +85,7 @@
 						<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
 					</div>
 				</div>
-				<div class="row" style="background-color:#ddd">
+				<div class="row">
 						<div class="col-md-8">Dish Name</div>
 						<div class="col-md-4">Cost</div>
 				</div>
@@ -94,7 +94,7 @@
 					<div class="col-md-4">0.00</div>
 				</div>
 				<div class="row">
-					<span class="col-md-8" id="pendingList">-</span>
+					<span class="col-md-12" id="pendingList">-</span>
 				</div>
 				<div class="row">
 					<div class="col-md-8">SEK</div>
@@ -106,35 +106,35 @@
 			</div>
 
 			<!-- Main column-->
-			<div class="col-md-9" id="mainCol1">
-
+			<div class="col-md-8" id="mainCol1">
 
 				<!-- First row, searchBar etc -->
 
-
 				<div class="row" id"manyDish">
-
+					<div class="col-md-12">
 					<!-- First row, searchBar etc -->
-					<div class="row" id="searchView">
-						<div class="row" style="background-color:#f1c745">
-							SELECT DISH
-							<hr>
-							<form>
-								<input type="text" placeholder="Enter key words"></input>
-								<button id="search" class="btn">search</button></input>
-								<select id="dishType">
-								  <option value="main dish">Main</option>
-								  <option value="starter">Starter</option>
-								  <option value="dessert">Dessert</option>
-								</select>
-							</form>
-						</div>
-						<div class="row" style="background-color:white">
-							<div id="dishList">
+						<div class="row" id="searchView">
+							<div class="col-md-12">
+								<div class="row" id="searchRow">
+									SELECT DISH
+									<hr>
+									<form>
+										<input type="text" placeholder="Enter key words"></input>
+										<button id="search" class="btn">search</button></input>
+										<select id="dishType">
+										  <option value="main dish">Main</option>
+										  <option value="starter">Starter</option>
+										  <option value="dessert">Dessert</option>
+										</select>
+									</form>
+								</div>
+								<div class="row">
+									<div id="dishList">
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-
 					<!-- Main row, all dishes -->
 					<div class="row" id="midRow1">
 						<!-- dishes go here -->
