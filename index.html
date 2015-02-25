@@ -137,7 +137,6 @@
 				<!-- Lasagna goes here -->	
 				<div class="row" id="inspectView">
 
-
 					<div class"col-md-6" style="background-color:#FFeeFF" id="oneDishCol1">
 						<div id="dishSpecific"></div>
 						<a id='goBack' class='btn'>back to Select dish</a>
@@ -161,6 +160,36 @@
 
 			<!-- Main column-->
 			<div class="col-md-12" id="mainCol2">
+
+				<div class="col-md-12"  id="overView"> <!-- search and list -->
+
+					<div class="row" style="background-color:#f1c745">
+						<div class="col-md-10">
+							<h2>My Dinner: <span id="numberOfGuests"></span> people</h2>
+						</div>
+						<div class="col-md-2">
+							<a href='selected_dish.html' class="btn">go back and edit dinner</a>
+						</div>
+						<form>
+							<input type="hidden" id="dishType" value="starter"/>
+						</form>
+					</div>
+					<div class="row" style="background-color:white">
+						<div class="col-md-11">
+							<div id="dishList">
+							</div>
+						</div>
+						<div class="col-md-1">
+							<h2>Total price:</h2>
+							<div id="totalprice">
+							</div>
+						</div>
+					</div>
+					<div class="row" style="background-color:white">
+						<a href='dinner_preperation.html' class="btn">Print Full recipe</a>
+					</div>
+					
+				</div>
 
 				<!-- First row, dinner+back-btn etc. -->
 				<div class="row" id="topRow2">
@@ -207,6 +236,9 @@
 
 	<script src="js/view/searchView.js"></script>
 	<script src="js/view/searchController.js"></script>
+
+	<script src="js/view/overView.js"></script>
+	<script src="js/view/overController.js"></script>
 
 	<script src="js/view/inspectView.js"></script>
 	<script src="js/view/inspectController.js"></script>
