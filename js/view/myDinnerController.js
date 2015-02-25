@@ -20,6 +20,12 @@ var MyDinnerController = function(view, model) {
 	   	model.removeDishFromMenu(removeid);       
 		model.notifyObservers();
 	});
+
+	view.confirmDinner.click(function(){
+	 	model.activeView(4);
+	 	model.notifyObservers();
+	 	//alert(model.getNumberOfGuests());
+	});
 }
 
 

@@ -26,7 +26,7 @@
 	</nav>
 
 	<!-- START CONTAINER -->
-	<div class="container" id="superContainer">
+	
 
 	<!-- notes1
 	Man kanske kan ha flera "main" med olika id som man "byter ut" (show/hide) om man ska byta hel sidlayout. 
@@ -49,21 +49,23 @@
 	Man kanske ska en view för varje enhet, ruta, osv. som t.ex. indigrienser har en egen, så kan dom laddas
 	in modulärt av en view över den. En buttonbuilder view också...
 	--> 
-
+	<div class="container" id="superContainer">
 	<!-- start welcomePage -->
 		<div class="row" id="welcomeView">
-			<div class="row">
-				<div class="col-md-offset-1 col-md-4"><h2>A Home Dinner Service</h2>
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-offset-1 col-md-4"><h2>A Home Dinner Service</h2>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-offset-1 col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus sollicitudin lacus, vitae venenatis diam interdum nec. Pellentesque efficitur lacinia sollicitudin. Aenean hendrerit sapien vel egestas lobortis. Nullam semper leo et lacinia porta. In non facilisis elit. Pellentesque diam risus, dignissim vitae lorem ac, dignissim semper enim.
-				</br>
-				</br>
-				</br>
-				Start quickly
-				</br>
-				<button id="newDinnerButton" class="btn">Create new dinner</button>
+				<div class="row">
+					<div class="col-md-offset-1 col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus sollicitudin lacus, vitae venenatis diam interdum nec. Pellentesque efficitur lacinia sollicitudin. Aenean hendrerit sapien vel egestas lobortis. Nullam semper leo et lacinia porta. In non facilisis elit. Pellentesque diam risus, dignissim vitae lorem ac, dignissim semper enim.
+					</br>
+					</br>
+					</br>
+					Start quickly
+					</br>
+					<button id="newDinnerButton" class="btn">Create new dinner</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -74,7 +76,9 @@
 			<!-- Current selection. +- participants... -->
 			<div class="col-md-3" id="leftCol1">
 				<div class="row">
-					<h2>My dinner</h2>
+					<div class="col-md-12">
+						<h2>My dinner</h2>
+					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-4">
@@ -85,7 +89,7 @@
 						<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" id="dishName">
 						<div class="col-md-8">Dish Name</div>
 						<div class="col-md-4">Cost</div>
 				</div>
@@ -118,6 +122,7 @@
 						<div class="row" id="searchView">
 							<div class="col-md-12">
 								<div class="row" id="searchBar">
+<<<<<<< HEAD
 									SELECT DISH
 									<hr>
 									<input id="searchInput" type="text" placeholder="Enter key words" value=""></input>
@@ -127,18 +132,31 @@
 									  <option value="starter">Starter</option>
 									  <option value="dessert">Dessert</option>
 									</select>
+=======
+									<div class="col-md-12">
+										<h2>Select Dish</h2>
+										<hr>
+										<input id="searchInput" type="text" placeholder="Enter key words" value=""></input>
+										<button id="search" class="btn">search</button></input>
+										<select id="dishType">
+										  <option value="main dish">Main</option>
+										  <option value="starter">Starter</option>
+										  <option value="dessert">Dessert</option>
+										</select>
+									</div>
+>>>>>>> c5ac56765ab57105331f76234a1ccaf62f7c0536
 								</div>
 							</div>
 							<div class="row">
-								<div id="dishList">
+								<div class="col-md-12">
+									<div id="dishList">
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- Main row, all dishes -->
-					<div class="row" id="midRow1">
-						<!-- dishes go here -->
-					</div>
+
 
 				</div>
 
@@ -154,20 +172,19 @@
 
 					<!-- Ingredients -->
 					<div class"col-md-6" id="oneDishCol2">
-						<div class="ingredients">
-								<div class="row"><h2>Ingredients for 4 people</h2></div>
-								<div class="row" id="insert_ing"></div>
-								<div class="row">
-									<div class="col-md-9"><a id="confirmDish" class="btn">Confirm Dish</a></div>
-									<div class="col-md-3" id="totalprice"></div>
-								</div>
-						</div>
+							<div class="row"><h2>Ingredients for 4 people</h2></div>
+							<div class="row" id="insert_ing"></div>
+							<div class="row">
+								<div class="col-md-9"><a id="confirmDish" class="btn">Confirm Dish</a></div>
+								<div class="col-md-3" id="totalprice"></div>
+							</div>
 					</div>
 				</div>
 
 			</div>
 
 		</div>
+</div>
 	<!-- end mainPage -->
 	<!-- start lastPage -->
 		<div class="row" id="lastPage">
@@ -189,7 +206,7 @@
 	<!-- end lastPage -->
 
 	<!-- END CONTAINER -->
-	</div>
+	
 
 
 
