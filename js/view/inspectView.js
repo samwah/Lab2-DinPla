@@ -35,6 +35,7 @@ var InspectView = function (container, model) {
 		}
 
 		this.totalPrice.append("SEK "+sum);
+		model.pendingPrice = sum;
 	}
 
 

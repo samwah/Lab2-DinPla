@@ -8,6 +8,11 @@ var DinnerModel = function() {
 	this.menu = [];
 	this.observers = [];
 	var currentView = 1;
+	this.pendingPrice = 0;
+
+	this.getView = function() {
+		return currentView;
+	}
 	
 	this.activeView = function(view) {
 		//1 = firstpage
@@ -17,7 +22,7 @@ var DinnerModel = function() {
 			currentView = view;
 			this.notifyObservers();
 		}
-		return currentView
+		return currentView; //+
 	}
 
 	this.addObserver = function(observer) {
@@ -319,7 +324,7 @@ var DinnerModel = function() {
 			'price':4
 			}]
 		},{
-		'id':102,
+		'id':103,
 		'name':'MD 4',
 		'type':'main dish',
 		'image':'meatballs.jpg',

@@ -7,9 +7,10 @@ var MyDinnerView = function (container, model) {
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.plusButton = container.find("#plusGuest");
 	this.minusButton = container.find("#minusGuest");
+	this.confirmDinner = container.find("#confirmDinner");
 	this.pendingCost = container.find("#pendingCost");
 	this.pendingList = container.find("#pendingList");
-	this.buttonlist = [];
+	this.pendingFirst = container.find("#pendingFirst");
 	console.log(this.minusButton);
 
 	
@@ -33,20 +34,19 @@ var MyDinnerView = function (container, model) {
 			" <button id='"+model.menu[item].id+"' class='remove_btn'>X</button>"+"</li>";
 
 			console.log(model.menu[item].id);
-
-			//this.buttonlist.push("asds");
-
-			//this.buttonlist.push(""+model.menu[item].id);
-			//console.log(this.buttonlist);
 		}
 
 		output = output + "</ul>";
-
 		this.pendingList.innerHTML = output;
 
-		//this.pendingList.append("</ul>");
-
 		this.pendingCost.innerHTML = model.getTotalMenuPrice();
+
+		if(model.getView() == 2){
+			this.pendingFirst.innerHTML = 0;
+		}
+		else{
+			this.pendingFirst.innerHTML = model.pendingPrice;
+		}
 	};
 
 
