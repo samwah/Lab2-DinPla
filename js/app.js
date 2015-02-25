@@ -20,6 +20,9 @@ $(function() {
 
 	var inspectView = new InspectView($("#inspectView"), model);
 	var inspectController = new InspectController(inspectView,model);
+
+	var overView = new OverView($("#overView"), model);
+	var overController = new OverController(overView,model);
 	
 	var welcomeView = new WelcomeView($("#welcomeView"), model);
 	var welcomeController = new WelcomeController(welcomeView,model);

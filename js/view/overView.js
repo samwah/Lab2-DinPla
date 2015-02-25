@@ -1,4 +1,4 @@
-var WelcomeView = function (container, model) {
+var OverView = function (container, model) {
 
 	model.addObserver(this);
 

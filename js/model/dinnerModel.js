@@ -72,6 +72,19 @@ var DinnerModel = function() {
 		return list_ingredients;
 	}
 
+	this.getDishPrice = function(id){
+		var sum = 0;
+		for(key in this.menu){
+			if(this.menu[key].id == id) {
+				for(i = 0; i<this.menu[key].ingredients.length; i++){
+					console.log("FOKC"+this.menu[key].ingredients[i].price);
+					sum += this.menu[key].ingredients[i].price;
+				}
+			}
+		}
+		return sum;
+	}
+
 	//Returns the total price of the this.menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
 		var list_ingredients = this.getAllIngredients();

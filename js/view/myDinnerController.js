@@ -33,12 +33,3 @@ var MyDinnerController = function(view, model) {
 	 	//alert(model.getNumberOfGuests());
 	});
 }
-
-
-//VV Real code VV
-//var MyDinnerController = function(view,model) {
-	//view.continueButton.click(function(){
-		
-		//Gömmer/Visar förstasidan? Kanske "scrollar" ner till content
-		//view.MyDinnerView(view.togglePage()) 
-//	}
