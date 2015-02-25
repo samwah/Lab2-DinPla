@@ -20,8 +20,8 @@ h3 {
 	font-size: 1em;
 }
 
-#mainCol1 {
-	background-color:#e47d22;
+#searchBar {
+	background-color:rgba(228,125,34,0.75);
 }
 
 #superContainer {
@@ -32,22 +32,24 @@ h3 {
 }
 
 #leftCol1 {
-	background-color:#5a91bb;
+	background-color:rgba(90,145,187,0.75);
+}
+#dishName {
+	background-color:#dddddd;
 }
 
-
 .btn {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0px;
-	-webkit-box-shadow: 2px 2px 0px #666666;
-	-moz-box-shadow: 2px 2px 0px #666666;
-	box-shadow: 2px 2px 0px #666666;
+	-webkit-border-radius: 3;
+	-moz-border-radius: 3;
+	border-radius: 3px;
+	-webkit-box-shadow: 1px 1px 0px #666666;
+	-moz-box-shadow: 1px 1px 0px #666666;
+	box-shadow: 1px 1px 0px #666666;
 	color: #000000;
 	background: #FFFFFF;
-	border: solid #000000 2px;
+	border: solid rgb(228,125,34) 2px;
 	text-decoration: none;
-	padding: 3px;
+	padding: 1px;
 }
 
 .banner {
