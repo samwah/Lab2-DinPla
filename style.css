@@ -25,6 +25,7 @@ h4{
 
 a {
 	color:white;
+	text-align: left;
 	font-size: 1.2em;
 	font-weight: bold;
 }
@@ -36,10 +37,6 @@ a:hover {
 
 h3 {
 	font-size: 1em;
-}
-
-.row {
-	border: dashed 1px;
 }
 
 #searchBar {
@@ -87,7 +84,7 @@ h3 {
 }
 
 .dishItem {
-	text-align: center;
+	text-align: left;
 	padding-top: 25px;
 	margin: 5px;
 }
