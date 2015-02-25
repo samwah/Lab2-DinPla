@@ -55,9 +55,29 @@ var MyDinnerView = function (container, model) {
 		}
 	};
 
+	this.hideView = function(){
+		//this.test.css( "display", "none" );
+		container.hide();
+	}
+
+	this.showView = function(){
+		container.show();
+	}
+
+	this.updateView = function(){
+		if (model.activeView()==2 || model.activeView()==3) {
+			this.showView();
+		} else {
+			this.hideView();
+		}
+		console.log(model.activeView())
+
+	}
+
 
 	this.update = function(obj) {
 		this.updateGuests();
+		this.updateView();
 		updatePending();
 	};
 

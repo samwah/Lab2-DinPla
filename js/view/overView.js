@@ -2,7 +2,7 @@ var OverView = function (container, model) {
 
 	model.addObserver(this);
 
-	var numGuests = model.getNumberOfGuests();
+	this.numGuests = container.find('#numberOfGuests');
 
 	this.dishType = container.find("#dishType");
 	this.totalprice = container.find("#totalprice");
@@ -11,7 +11,8 @@ var OverView = function (container, model) {
 
 	this.updateOverView = function(){
 
-		var dishes = model.getAllDishes(this.dishType.val());
+		var dishes = model.getFullMenu();
+		alert(dishes.length);
 
 		var totalsum = 0;
 
@@ -53,6 +54,7 @@ var OverView = function (container, model) {
 
 	this.update = function(obj){
 		this.updateView();
+		this.updateOverView();
 	}
 	this.update();
 }
