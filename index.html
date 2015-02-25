@@ -51,21 +51,19 @@
 	--> 
 	<div class="container" id="superContainer">
 	<!-- start welcomePage -->
-		<div class="row" id="welcomeView">
-			<div class="col-md-12">
-				<div class="row">
-					<div class="col-md-offset-1 col-md-4"><h2>A Home Dinner Service</h2>
-					</div>
+		<div class="col-md-12" id="welcomeView">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-4"><h2>A Home Dinner Service</h2>
 				</div>
-				<div class="row">
-					<div class="col-md-offset-1 col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus sollicitudin lacus, vitae venenatis diam interdum nec. Pellentesque efficitur lacinia sollicitudin. Aenean hendrerit sapien vel egestas lobortis. Nullam semper leo et lacinia porta. In non facilisis elit. Pellentesque diam risus, dignissim vitae lorem ac, dignissim semper enim.
-					</br>
-					</br>
-					</br>
-					Start quickly
-					</br>
-					<button id="newDinnerButton" class="btn">Create new dinner</button>
-					</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus sollicitudin lacus, vitae venenatis diam interdum nec. Pellentesque efficitur lacinia sollicitudin. Aenean hendrerit sapien vel egestas lobortis. Nullam semper leo et lacinia porta. In non facilisis elit. Pellentesque diam risus, dignissim vitae lorem ac, dignissim semper enim.
+				</br>
+				</br>
+				</br>
+				Start quickly
+				</br>
+				<button id="newDinnerButton" class="btn">Create new dinner</button>
 				</div>
 			</div>
 		</div>
@@ -73,39 +71,38 @@
 
 	<!-- start mainPage -->
 		<div class="row" id="mainView">
+
 			<!-- Current selection. +- participants... -->
 			<div class="col-md-3" id="leftCol1">
-				<div class="row">
-					<div class="col-md-12">
-						<h2>My dinner</h2>
+				<h2>My dinner</h2>
+
+				<div class="col-md-6">
+					People: <span id="numberOfGuests"></span>
+				</div>
+
+				<div class="col-md-6">
+	          		<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+					<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+				</div>
+				<div class="col-md-12">
+					<div class="row" id="dishName">
+							<div class="col-md-8">Dish Name</div>
+							<div class="col-md-4">Cost</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						People: <span id="numberOfGuests"></span>
+					<div class="row">
+						<span class="col-md-12" id="pendingList">-</span>
 					</div>
-					<div class="col-md-8">
-		          		<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-						<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+					<div class="row">
+						<div class="col-md-8">Pending</div>
+						<div class="col-md-4" id="pendingFirst">0.00</div>
 					</div>
-				</div>
-				<div class="row" id="dishName">
-						<div class="col-md-8">Dish Name</div>
-						<div class="col-md-4">Cost</div>
-				</div>
-				<div class="row">
-					<span class="col-md-12" id="pendingList">-</span>
-				</div>
-				<div class="row">
-					<div class="col-md-8">Pending</div>
-					<div class="col-md-4" id="pendingFirst">0.00</div>
-				</div>
-				<div class="row">
-					<div class="col-md-8">SEK</div>
-					<div class="col-md-4"  id="pendingCost">0.00</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12"><button id="confirmDinner" class="btn">Confirm Dinner</button></div>
+					<div class="row">
+						<div class="col-md-8">SEK</div>
+						<div class="col-md-4"  id="pendingCost">0.00</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12"><button id="confirmDinner" class="btn">Confirm Dinner</button></div>
+					</div>
 				</div>
 			</div>
 
@@ -115,49 +112,39 @@
 
 			<div class="col-md-9" id="mainCol1">
 
-				<div class="row" id"manyDish">
-					<div class="col-md-12">
-					<!-- First row, searchBar etc -->
 
-						<div class="row" id="searchView">
-							<div class="col-md-12">
-								<div class="row" id="searchBar">
-									<div class="col-md-12">
-										<h2>Select Dish</h2>
-										<hr>
-										<input id="searchInput" type="text" placeholder="Enter key words" value=""></input>
-										<button id="search" class="btn">search</button></input>
-										<select id="dishType">
-										  <option value="main dish">Main</option>
-										  <option value="starter">Starter</option>
-										  <option value="dessert">Dessert</option>
-										</select>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div id="dishList">
-									</div>
-								</div>
-							</div>
+			<!-- First row, searchBar etc -->
+				<div class="col-md-12" id="searchView">
+						<div class="row" id="searchBar">
+							<h2>Select Dish</h2>
+							<hr>
+							<input id="searchInput" type="text" placeholder="Enter key words" value=""></input>
+							<button id="search" class="btn">search</button></input>
+							<select id="dishType">
+							  <option value="main dish">Main</option>
+							  <option value="starter">Starter</option>
+							  <option value="dessert">Dessert</option>
+							</select>
+						</div>
+					<div class="col-md-12">
+						<div id="dishList">
 						</div>
 					</div>
-					<!-- Main row, all dishes -->
 				</div>
+			<!-- Main row, all dishes -->
+
 
 				<!-- Lasagna goes here -->	
 				<div class="row" id="inspectView">
 
-					<!-- Description -->
-					<div class"col-md-8" style="background-color:#FFeeFF" id="oneDishCol1">
-						<div id="dishSpecific">
-						</div>
+
+					<div class"col-md-6" style="background-color:#FFeeFF" id="oneDishCol1">
+						<div id="dishSpecific"></div>
 						<a id='goBack' class='btn'>back to Select dish</a>
 					</div>
 
-					<!-- Ingredients -->
-					<div class"col-md-4" style="background-color:#00eeFF" id="oneDishCol2">
+
+					<div class"col-md-6" style="background-color:#00eeFF" id="oneDishCol2">
 							<div class="row"><h2>Ingredients for 4 people</h2></div>
 							<div class="row" id="insert_ing"></div>
 							<div class="row">
@@ -165,18 +152,15 @@
 								<div class="col-md-3" id="totalprice"></div>
 							</div>
 					</div>
+
 				</div>
-
 			</div>
-
 		</div>
-</div>
-	<!-- end mainPage -->
-	<!-- start lastPage -->
+
 		<div class="row" id="lastPage">
 
 			<!-- Main column-->
-			<div class="col-md-9" id="mainCol2">
+			<div class="col-md-12" id="mainCol2">
 
 				<!-- First row, dinner+back-btn etc. -->
 				<div class="row" id="topRow2">
@@ -189,6 +173,10 @@
 			</div>
 
 		</div>
+	</div>
+	<!-- end mainPage -->
+	<!-- start lastPage -->
+
 	<!-- end lastPage -->
 
 	<!-- END CONTAINER -->
