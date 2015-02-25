@@ -9,7 +9,10 @@ var OverView = function (container, model) {
 	this.dishList = container.find("#dishList");
 	this.goBackEdit = container.find("#goBackEdit");
 	this.goPrep = container.find("#goPrep");
+	this.priceDiv = container.find("#priceDiv");
 	this.mode = 1;
+
+	//this.prepCon = container.find("#prepCon");
 
 
 	this.updateOverView = function(){
@@ -45,6 +48,9 @@ var OverView = function (container, model) {
 
 		}
 		else{
+
+			this.goPrep.hide();
+			this.priceDiv.hide();
 
 			for(i = 0; i < dishes.length; i++) {
 

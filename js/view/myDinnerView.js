@@ -35,9 +35,9 @@ var MyDinnerView = function (container, model) {
 					sum += model.menu[item].ingredients[i].price;
 				}
 
-			output = output + "<div class='col-md-8'><a class='inspect_link' id="+model.menu[item].id+">"+model.menu[item].name+"</a></div>"+
-			"<div class='col-md-4'> "+sum+""+
-			"<button id='"+model.menu[item].id+"' class='remove_btn'>X</button>"+"</div>";
+			output = output + "<div class='row'><div class='col-md-6'><a class='inspect_link' id="+model.menu[item].id+">"+model.menu[item].name+"</a></div>"+
+			"<div class='col-md-offset-2 col-md-4'> "+sum+""+
+			"<button id='"+model.menu[item].id+"' class='remove_btn'>X</button>"+"</div></div>";
 
 			console.log(model.menu[item].id);
 		}
