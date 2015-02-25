@@ -24,12 +24,10 @@ var MyDinnerController = function(view, model) {
 	$(document).on('click', '.inspect_link', function(){
 		model.inspectedItem = $(this).attr("id");
 		model.activeView(3);     
-		model.notifyObservers();
 	});
 
 	view.confirmDinner.click(function(){
 	 	model.activeView(4);
-	 	model.notifyObservers();
 	 	//alert(model.getNumberOfGuests());
 	});
 }
