@@ -17,6 +17,9 @@ $(function() {
 
 	var searchView = new SearchView($("#searchView"), model);
 	var searchController = new SearchController(searchView,model);
+
+	var inspectView = new InspectView($("#inspectView"), model);
+	var inspectController = new InspectController(inspectView,model);
 	
 	var welcomeView = new WelcomeView($("#welcomeView"), model);
 	var welcomeController = new WelcomeController(welcomeView,model);

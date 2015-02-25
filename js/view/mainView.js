@@ -10,7 +10,7 @@ var MainView = function (container, model) {
 	}
 
 	this.updateView = function(){
-		if (model.activeView()==2) {
+		if (model.activeView()>=2) {
 			this.showView();
 		} else {
 			this.hideView();
