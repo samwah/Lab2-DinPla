@@ -70,7 +70,7 @@ var InspectView = function (container, model) {
 
 		if (typeof obj !== 'undefined' && model.activeView()==3) {
 			console.log('SOLO OBJ FOUND');
-			this.updateInspect(obj);		
+			this.updateInspect(obj);
 		}
 		//this.updateInspect();
 	}
