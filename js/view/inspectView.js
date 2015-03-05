@@ -9,8 +9,12 @@ var InspectView = function (container, model) {
 	this.totalPrice = container.find("#totalprice");
 	this.goBack = container.find("#goBack");
 	this.confirmDish = container.find("#confirmDish");
+	this.numPeople = container.find("#numPeople");
 	
 	this.updateInspect = function(){
+
+		this.numPeople.val(model.getNumberOfGuests());
+		this.numPeople.html("<h2>Ingredients for "+this.numPeople.val()+" people</h2>");
 
 		this.dishSpecific.html("");
 		this.totalPrice.html("");
@@ -28,14 +32,16 @@ var InspectView = function (container, model) {
 
 		for(i = 0; i < dish.ingredients.length; i++ ) {
 			sum += dish.ingredients[i].price
-			this.ingredientsList.append("<div class='col-md-4'>"+dish.ingredients[i].quantity+""+dish.ingredients[i].unit+"</div>"+
+			this.ingredientsList.append("<div class='col-md-4'>"+dish.ingredients[i].quantity*this.numPeople.val()+""+dish.ingredients[i].unit+"</div>"+
 			"<div class='col-md-6'>"+dish.ingredients[i].name+"</div>"+
 			"<div class='col-md-1'>SEK</div>"+
-			"<div class='col-md-1'>"+dish.ingredients[i].price+"</div>");
+			"<div class='col-md-1'>"+dish.ingredients[i].price*this.numPeople.val()+"</div>");
 		}
 
-		this.totalPrice.append("SEK "+sum);
-		model.pendingPrice = sum;
+		this.totalPrice.append("SEK "+sum*this.numPeople.val());
+		model.setPendingPrice(sum);
+
+		//model.pendingPrice = sum*this.numPeople.val();
 	}
 
 

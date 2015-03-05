@@ -21,12 +21,13 @@ var MyDinnerView = function (container, model) {
 
 	this.updateGuests = function() {
 		this.numberOfGuests.val(model.getNumberOfGuests());
-		this.numberOfGuests.html(this.numberOfGuests.val());
+		this.numberOfGuests.html("People: "+this.numberOfGuests.val());
 	};
 
-	var updatePending = function() {
+	var updatePending = function(numGuests) {
 
 		var output = "<ul>";
+
 
 		for (item in model.menu){
 
@@ -36,7 +37,7 @@ var MyDinnerView = function (container, model) {
 				}
 
 			output = output + "<div class='row'><div class='col-md-6'><a class='inspect_link' id="+model.menu[item].id+">"+model.menu[item].name+"</a></div>"+
-			"<div class='col-md-offset-2 col-md-4'> "+sum+""+
+			"<div class='col-md-offset-2 col-md-4'> "+sum*numGuests+""+
 			"<button id='"+model.menu[item].id+"' class='remove_btn'>X</button>"+"</div></div>";
 
 			console.log(model.menu[item].id);
@@ -45,14 +46,15 @@ var MyDinnerView = function (container, model) {
 		output = output + "</ul>";
 		this.pendingList.innerHTML = output;
 
-		this.pendingCost.innerHTML = model.getTotalMenuPrice();
-
 		if(model.getView() == 2){
 			this.pendingFirst.innerHTML = 0;
+			model.pendingPrice = 0;
 		}
 		else{
 			this.pendingFirst.innerHTML = model.pendingPrice;
 		}
+
+		this.pendingCost.innerHTML = model.getTotalMenuPrice()+model.pendingPrice;
 	};
 
 	this.hideView = function(){
@@ -78,7 +80,7 @@ var MyDinnerView = function (container, model) {
 	this.update = function(obj) {
 		this.updateGuests();
 		this.updateView();
-		updatePending();
+		updatePending(this.numberOfGuests.val());
 	};
 
 	//this.updateGuests();

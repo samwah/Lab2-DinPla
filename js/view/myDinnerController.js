@@ -3,7 +3,6 @@ var MyDinnerController = function(view, model) {
  
 	 view.plusButton.click(function(){
 	 	model.setNumberOfGuests(model.getNumberOfGuests() + 1);
-	 	//model.addDishToMenu(1);
 	 	model.notifyObservers();
 	 	//alert(model.getNumberOfGuests());
 	 });

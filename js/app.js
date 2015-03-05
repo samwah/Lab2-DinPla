@@ -12,14 +12,14 @@ $(function() {
 	//var welcomeView = new welcomeView($("#welcomeView"), model);
 	//var welcomeViewController = new welcomeViewController(welcomeView,model);
 
+	var inspectView = new InspectView($("#inspectView"), model);
+	var inspectController = new InspectController(inspectView,model);
+
 	var myDinnerView = new MyDinnerView($("#leftCol1"), model);
 	var myDinnerController = new MyDinnerController(myDinnerView,model);
 
 	var searchView = new SearchView($("#searchView"), model);
 	var searchController = new SearchController(searchView,model);
-
-	var inspectView = new InspectView($("#inspectView"), model);
-	var inspectController = new InspectController(inspectView,model);
 
 	var overView = new OverView($("#overView"), model);
 	var overController = new OverController(overView,model);

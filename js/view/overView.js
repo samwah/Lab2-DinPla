@@ -18,7 +18,7 @@ var OverView = function (container, model) {
 	this.updateOverView = function(){
 
 		this.numberOfGuests.val(model.getNumberOfGuests());
-		this.numberOfGuests.html(this.numberOfGuests.val());
+		this.numberOfGuests.html("<h2>My Dinner "+this.numberOfGuests.val()+" People</h2>");
 
 		this.dishList.html("");
 		this.totalprice.html("");
@@ -27,6 +27,9 @@ var OverView = function (container, model) {
 		//alert(dishes.length);
 
 		if (this.mode == 1){
+
+			this.goPrep.show();
+			this.priceDiv.show();
 
 			var totalsum = 0;
 

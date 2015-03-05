@@ -9,18 +9,27 @@ var SearchView = function (container, model) {
 	this.searchInput = container.find("#searchInput");
 
 	
-	this.updateSearch = function(){
+	this.updateSearch = function(obj){
 
 		this.dishList.html("");
+		//alert("BEFORE");
+		//console.log("2: "+model.menuSearch);
+		//model.getRecipeJsonSearch(this.searchInput.val());
+		var dishes = obj;
 
-		var dishes = model.getAllDishes(this.dishType.val(),this.searchInput.val());
+		console.log(obj);
+		//alert("AFTER");
+		//console.log("3: "+model.menuSearch);
+		console.log(dishes);
+		//var dishes = model.getAllDishes(this.dishType.val(),this.searchInput.val());
 
-		for(i = 0; i < dishes.length; i++) {
+		for(var i = 0; i < dishes.length; i++) {
 			this.dishList.append("<div class='col-md-3'><div class='dishItem'>"+
-				"<div class='row'><a class='inspectItem' id='"+ dishes[i].id +"'><img src='images/"+ dishes[i].image +"'/></a></div>"+
-				"<div class='row'><h2>"+ dishes[i].name +"</h2></div>"+
-				"<div class='row'><h3>"+ dishes[i].description +"</h3></div></div></div>");
+				"<div class='row listItem imgCent'><a class='inspectItem' id='"+ dishes[i].RecipeID +"'><img src='images/"+ dishes[i].ImageURL +"' width='80%' height='80%'/></a></div>"+
+				"<div class='row listItem pad'><h2>"+ dishes[i].Title +"</h2></div>"+
+				"<div class='row listItem pad'><h6>"+ dishes[i].Cuisine +"</h6></div></div></div>");
 		}
+		
 	}
 
 
@@ -44,9 +53,13 @@ var SearchView = function (container, model) {
 
 	this.update = function(obj){
 		this.updateView();
-		this.updateSearch();
+		if (obj != undefined) {
+			alert('OBJ FOUND');
+			this.updateSearch(obj);		
+		}
+	
 	}
 
-	this.updateSearch();
+	//this.updateSearch();
 	this.update();
 }

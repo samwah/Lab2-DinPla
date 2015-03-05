@@ -9,6 +9,49 @@ var DinnerModel = function() {
 	this.observers = [];
 	var currentView = 1;
 	this.pendingPrice = 0;
+	var apiKey = "dvxTU5WwHw2BY5uT8iYX278xv4DXbUBP";
+	this.menuSearch = [];
+
+	this.getRecipeJsonSearch = function(titleKeyword) {
+        //var apiKey = "your-api-key-here";
+        //var titleKeyword = "lasagna";
+        var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="
+                  + titleKeyword 
+                  + "&api_key="+apiKey;
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            cache: false,
+            url: url,
+            success: function (data) {
+                alert('success');
+                //console.log(data);
+                //this.menuSearch = data;
+                //console.log("1: "+this.menuSearch);
+                this.notifyObservers(data);
+            }
+        });
+	}
+	        
+	this.getRecipeJsonFetch = function(recipeID) {
+		//var apiKey = "your-api-key-here";
+		var url = "http://api.bigoven.com/recipe/" + recipeID + "?api_key="+apiKey;
+		$.ajax({
+	        type: "GET",
+	        dataType: 'json',
+	        cache: false,
+	        url: url,
+	        success: function (data) {
+	            alert('success');
+	            console.log(data.results);
+	        }
+		});
+    }
+        
+
+	this.setPendingPrice = function(price) {
+		this.pendingPrice = price*numberOfGuests;
+	}
 
 	this.getView = function() {
 		return currentView;

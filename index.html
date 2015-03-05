@@ -75,10 +75,8 @@
 			<!-- Current selection. +- participants... -->
 			<div class="col-md-3" id="leftCol1">
 				<h4>My dinner</h4>
-
-				<div class="col-md-6">
-					People: <span id="numberOfGuests"></span>
-				</div>
+				
+				<div class="col-md-6" id="numberOfGuests"></div>
 
 				<div class="col-md-6">
 	          		<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
@@ -143,9 +141,9 @@
 					</div>
 
 
-					<div class="col-md-6" id="oneDishCol2">
-							<div class="row"><h2>Ingredients for 4 people</h2></div>
-							<div class="row" id="insert_ing"></div>
+					<div class="col-md-6 oPanel" id="oneDishCol2">
+							<div class="row" id='numPeople'></div>
+							<div class="row " id="insert_ing"></div>
 							<div class="row">
 								<div class="col-md-9"><a id="confirmDish" class="btn">Confirm Dish</a></div>
 								<div class="col-md-3" id="totalprice"></div>
@@ -166,9 +164,7 @@
 				<div class="col-md-12"  id="overView"> <!-- search and list -->
 
 					<div class="row" style="background-color:#f1c745">
-						<div class="col-md-10">
-							<h2>My Dinner: <span id="numberOfGuests"></span> people</h2>
-						</div>
+						<div class="col-md-10" id="numberOfGuests" ></div>
 						<div class="col-md-2">
 							<a id="goBackEdit" class="btn">go back and edit dinner</a>
 						</div>
