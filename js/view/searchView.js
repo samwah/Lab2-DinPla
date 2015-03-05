@@ -29,9 +29,9 @@ var SearchView = function (container, model) {
 			var output = ['http://images.bigoven.com/image/upload/t_recipe-128/', obj[i].image.slice(position)].join('');
 
 			this.dishList.append("<div class='col-md-3 dishItem'>"+
-				"<div class='row listItem imgCent'><a class='inspectItem' id='"+ obj[i].id +"'><img src='"+ output +"'/></a></div>"+
-				"<div class='row listItem pad'><h2>"+ obj[i].name +"</h2></div>"+
-				"<div class='row listItem pad'><h6>"+ obj[i].type +"</h6></div></div>");
+				"<div ><a class='inspectItem' id='"+ obj[i].id +"'><img src='"+ output +"'/></a></div>"+
+				"<div ><h3>"+ obj[i].name +"</h3></div>"+
+				"<div ><h6>"+ obj[i].type +"</h6></div></div>");
 		}
 		
 	}
@@ -52,19 +52,18 @@ var SearchView = function (container, model) {
 		} else {
 			this.hideView();
 		}
-		console.log(model.activeView())
+		//console.log("searchView: "+model.activeView())
 	}
 
 	this.update = function(obj){
 		this.updateView();
-		console.log('udating....');
-		console.log(obj);
-		if (typeof obj !== 'undefined') {
+		//console.log(obj);
+		if (typeof obj !== 'undefined' && model.activeView()==2) {
 			console.log('OBJ FOUND');
-			this.updateSearch(obj);		
+			this.updateSearch(obj);
 		}
 		else {
-			console.log('undefined');
+			console.log('else:undefined');
 		}
 		
 	}

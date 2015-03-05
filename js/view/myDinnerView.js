@@ -11,7 +11,6 @@ var MyDinnerView = function (container, model) {
 	this.pendingCost = container.find("#pendingCost");
 	this.pendingList = container.find("#pendingList");
 	this.pendingFirst = container.find("#pendingFirst");
-	console.log(this.minusButton);
 
 	
 	//this.numberOfGuests.val(model.getNumberOfGuests());

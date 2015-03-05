@@ -11,12 +11,13 @@ var SearchController = function(view, model) {
 	 	//
 	 	//model.notifyObservers();
 	 	model.getRecipeJsonSearch(view.searchInput.val());
-	 	view.updateSearch(); //DISCLAIMER FIX THIS DIRTY BRO
+	 	//view.updateSearch(); //DISCLAIMER FIX THIS DIRTY BRO
 	 });
 
 	$(document).on('click', '.inspectItem', function(){
 		model.inspectedItem = $(this).attr("id");
 		model.activeView(3);
+		model.getDish(model.inspectedItem);
 	});
 
 

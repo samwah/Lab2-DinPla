@@ -84,7 +84,7 @@ var OverView = function (container, model) {
 		} else {
 			this.hideView();
 		}
-		console.log(model.activeView())
+		//console.log("overView: "+model.activeView())
 
 	}
 

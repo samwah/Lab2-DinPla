@@ -12,12 +12,10 @@ var DinnerModel = function() {
 	//var apiKey = "dvxTU5WwHw2BY5uT8iYX278xv4DXbUBP";
 	var apiKey= "dvxVMoURtQ38bKtLPt7dMRI95Tm07Lad";
 	this.menuSearch = [];
-	this.currentDish = [];
+	this.currentDish = {};
 
 
 	this.getRecipeJsonSearch = function(titleKeyword) {
-        //var apiKey = "your-api-key-here";
-        //var titleKeyword = "lasagna";
         var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="
                   + titleKeyword 
                   + "&api_key="+apiKey;
@@ -29,7 +27,7 @@ var DinnerModel = function() {
             url: url,
             success: function (data) {
                 alert('success');
-                console.log(data.Results);
+                //console.log(data.Results);
                 this.menuSearch = [];
                 //this.menuSearch = data.results;
                 //console.log("1: "+this.menuSearch);
@@ -37,26 +35,17 @@ var DinnerModel = function() {
 				for (n in data.Results){
 					currentData = data.Results[n];
 					// console.log(currentData);
-					// var currentName = currentData.Title;
-					// var currentType = currentData.Category;
-					// var currentImage =  currentData.ImageURL;
-					//var currentDescription = currentData.descöaehkf
-					// var id = data.
 					// this.menuSearch[n].id = data;
-
 					this.menuSearch.push({id: currentData.RecipeID, name: currentData.Title, type: currentData.Category, image: currentData.ImageURL});
-
+					
 				}		
-
-				//console.log(data[2]);
-                this.notifyObservers(this.menuSearch);
+				this.notifyObservers(this.menuSearch);
             }
         });
 	}
 
 
 	this.getDish = function(recipeID) {
-		//var apiKey = "your-api-key-here";
 		var url = "http://api.bigoven.com/recipe/" + recipeID + "?api_key="+apiKey;
 		$.ajax({
 	        type: "GET",
@@ -67,11 +56,16 @@ var DinnerModel = function() {
 	        success: function (data) {
 	            console.log(data);
 	            var dish = data;
-	            var dishArray = [];
-	            dishArray.push({id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL});
+	            //var dishArray = [];
+	            //dishArray.push({id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL});
+	            
+	            var dishArray = {id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL};
 	            this.currentDish = dishArray;
-	            this.notifyObservers();
+	            //console.log(dishArray);
+	            //console.log(this.currentDish);
+	            console.log(this.currentDish);
 
+	            this.notifyObservers(dishArray);
 	        }
 		});
 

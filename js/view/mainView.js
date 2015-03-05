@@ -15,7 +15,7 @@ var MainView = function (container, model) {
 		} else {
 			this.hideView();
 		}
-		console.log("yey");
+		//console.log("mainView: "+model.activeView());
 	}
 
 	this.update = function(obj){

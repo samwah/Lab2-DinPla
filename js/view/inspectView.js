@@ -11,7 +11,7 @@ var InspectView = function (container, model) {
 	this.confirmDish = container.find("#confirmDish");
 	this.numPeople = container.find("#numPeople");
 	
-	this.updateInspect = function(){
+	this.updateInspect = function(obj){
 
 		this.numPeople.val(model.getNumberOfGuests());
 		this.numPeople.html("<h2>Ingredients for "+this.numPeople.val()+" people</h2>");
@@ -20,14 +20,15 @@ var InspectView = function (container, model) {
 		this.totalPrice.html("");
 		this.ingredientsList.html("");
 
-		model.getDish(model.inspectedItem);
+		//model.getDish(model.inspectedItem);
 		var dish = model.currentDish;
+		console.log(dish);
 
 
 		this.dishSpecific.append("<div class='dishItem'>"+
-			"<div class='row'><h2>"+ dish.name +"</h2></div>"+
-			"<div class='row'><img src='"+ dish.image +"'/></div>"+
-			"<div class='row'><h3>"+ dish.description +"</h3></div>"+
+			"<div><h2>"+ dish.name +"</h2></div>"+
+			"<div><img src='"+ dish.image +"' height='50%' width='50%'/></div>"+
+			"<div><h3>"+ dish.description +"</h3></div>"+
 			"</div>");
 
 		var sum = 0;
@@ -61,11 +62,16 @@ var InspectView = function (container, model) {
 			this.hideView();
 		}
 
-		console.log(model.activeView())
+		//console.log("inspectView: "+model.activeView())
 	}
 
 	this.update = function(obj){
 		this.updateView();
+
+		if (typeof obj !== 'undefined' && model.activeView()==3) {
+			console.log('SOLO OBJ FOUND');
+			this.updateInspect(obj);		
+		}
 		//this.updateInspect();
 	}
 

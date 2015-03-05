@@ -66,6 +66,14 @@ h3 {
 	border-color: #0f304a;
 }
 
+.dishItem {
+
+	background-color:rgba(90,150,187,1);
+	margin: 25px;
+	padding-top: 5px;
+	/*border:solid 2px;*/
+}
+
 .listItem {
 	background-color:rgba(60,150,150,0.5);
 	height: 100px;
@@ -122,11 +130,6 @@ h3 {
 .ingredients {
 	background-color: #cf9c00;
 	color: black;
-}
-
-.dishItem {
-
-	padding: 5px;
 }
 
 .border {
