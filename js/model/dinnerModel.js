@@ -13,21 +13,24 @@ var DinnerModel = function() {
 	var apiKey= "dvxVMoURtQ38bKtLPt7dMRI95Tm07Lad";
 	this.menuSearch = [];
 	this.currentDish = {};
+	$("#loading").hide();
 
 
 	this.getRecipeJsonSearch = function(titleKeyword) {
         var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="
                   + titleKeyword 
                   + "&api_key="+apiKey;
+
+        $("#loading").show();
         $.ajax({
             type: "GET",
             dataType: 'json',
             cache: false,
             context: this,
             url: url,
-            
             success: function (data) {
                 this.menuSearch = [];
+                $("#loading").hide();
 
 				for (n in data.Results){
 					currentData = data.Results[n];
