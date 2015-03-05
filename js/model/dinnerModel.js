@@ -56,11 +56,8 @@ var DinnerModel = function() {
 	        success: function (data) {
 	            console.log(data);
 	            var dish = data;
-	            //var dishArray = [];
-	            //dishArray.push({id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL});
 	            
-	            var dishArray = {id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL};
-	            this.currentDish = dishArray;
+	            this.currentDish = {id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL};
 	            //console.log(dishArray);
 	            //console.log(this.currentDish);
 	            console.log(this.currentDish);
