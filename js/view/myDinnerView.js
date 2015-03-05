@@ -29,6 +29,7 @@ var MyDinnerView = function (container, model) {
 
 
 		for (item in model.menu){
+			console.log(model.menu[item]);
 
 			var sum = 0;
 			for(i = 0; i<model.menu[item].ingredients.length; i++){

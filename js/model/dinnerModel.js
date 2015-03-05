@@ -52,8 +52,9 @@ var DinnerModel = function() {
 	        url: url,
 	        success: function (data) {
 	            var dish = data;
-	            this.currentDish = {id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL};
-	            this.notifyObservers(dishArray);
+	            console.log(dish);
+	            this.currentDish = {id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL, ingredients: dish.Ingredients};
+	            this.notifyObservers(this.currentDish);
 	        }
 		});
 
@@ -157,7 +158,7 @@ var DinnerModel = function() {
 	//Adds the passed dish to the this.menu. If the dish of that type already exists on the this.menu
 	//it is removed from the this.menu and the new one added.
 	this.addDishToMenu = function(id) {
-		this.menu.push(this.getDish(id));
+		this.menu.push(this.currentDish);
 	}
 
 	//Removes dish from this.menu

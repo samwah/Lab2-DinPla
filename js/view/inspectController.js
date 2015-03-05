@@ -12,6 +12,7 @@ var InspectController = function(view, model) {
 	 });
 
 	 view.confirmDish.click(function(){
+	 	console.log("INTO MENU "+ model.inspectedItem);
 	 	model.addDishToMenu(model.inspectedItem);
 	 	model.activeView(2);
 	 	//alert(model.getNumberOfGuests());
