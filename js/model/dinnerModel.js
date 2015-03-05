@@ -25,19 +25,13 @@ var DinnerModel = function() {
             cache: false,
             context: this,
             url: url,
+            
             success: function (data) {
-                alert('success');
-                //console.log(data.Results);
                 this.menuSearch = [];
-                //this.menuSearch = data.results;
-                //console.log("1: "+this.menuSearch);
 
 				for (n in data.Results){
 					currentData = data.Results[n];
-					// console.log(currentData);
-					// this.menuSearch[n].id = data;
 					this.menuSearch.push({id: currentData.RecipeID, name: currentData.Title, type: currentData.Category, image: currentData.ImageURL});
-					
 				}		
 				this.notifyObservers(this.menuSearch);
             }
@@ -54,14 +48,8 @@ var DinnerModel = function() {
 	        context: this,
 	        url: url,
 	        success: function (data) {
-	            console.log(data);
 	            var dish = data;
-	            
 	            this.currentDish = {id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL};
-	            //console.log(dishArray);
-	            //console.log(this.currentDish);
-	            console.log(this.currentDish);
-
 	            this.notifyObservers(dishArray);
 	        }
 		});
