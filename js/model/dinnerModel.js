@@ -37,6 +37,9 @@ var DinnerModel = function() {
 					this.menuSearch.push({id: currentData.RecipeID, name: currentData.Title, type: currentData.Category, image: currentData.ImageURL});
 				}		
 				this.notifyObservers(this.menuSearch);
+            },
+            error: function (jqXHR,textStatus,errorThrown){
+            	alert(errorThrown);
             }
         });
 	}
@@ -44,6 +47,7 @@ var DinnerModel = function() {
 
 	this.getDish = function(recipeID) {
 		var url = "http://api.bigoven.com/recipe/" + recipeID + "?api_key="+apiKey;
+		$("#loading").show();
 		$.ajax({
 	        type: "GET",
 	        dataType: 'json',
@@ -51,11 +55,15 @@ var DinnerModel = function() {
 	        context: this,
 	        url: url,
 	        success: function (data) {
+	        	$("#loading").hide();
 	            var dish = data;
 	            console.log(dish);
 	            this.currentDish = {id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL, ingredients: dish.Ingredients};
 	            this.notifyObservers(this.currentDish);
-	        }
+	        },
+	        error: function (jqXHR,textStatus,errorThrown){
+            	alert(errorThrown);
+            }
 		});
 
 		
@@ -149,10 +157,10 @@ var DinnerModel = function() {
 
 		for(ing in list_ingredients){
 			//alert("ingredient.price");
-			sum = sum + list_ingredients[ing].price*numberOfGuests;
+			sum = sum + list_ingredients[ing].MetricQuantity;
 		}
 
-		return sum;
+		return parseFloat(sum*numberOfGuests.toFixed(2));
 	}
 
 	//Adds the passed dish to the this.menu. If the dish of that type already exists on the this.menu

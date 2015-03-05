@@ -33,8 +33,9 @@ var MyDinnerView = function (container, model) {
 
 			var sum = 0;
 			for(i = 0; i<model.menu[item].ingredients.length; i++){
-					sum += model.menu[item].ingredients[i].price;
+					sum += model.menu[item].ingredients[i].MetricQuantity;
 				}
+			sum = parseFloat(sum.toFixed(2));
 
 			output = output + "<div class='row'><div class='col-md-6'><a class='inspect_link' id="+model.menu[item].id+">"+model.menu[item].name+"</a></div>"+
 			"<div class='col-md-offset-2 col-md-4'> "+sum*numGuests+""+
@@ -51,10 +52,10 @@ var MyDinnerView = function (container, model) {
 			model.pendingPrice = 0;
 		}
 		else{
-			this.pendingFirst.innerHTML = model.pendingPrice;
+			this.pendingFirst.innerHTML = parseFloat(model.pendingPrice.toFixed(2));
 		}
 
-		this.pendingCost.innerHTML = model.getTotalMenuPrice()+model.pendingPrice;
+		this.pendingCost.innerHTML = model.getTotalMenuPrice()+parseFloat(model.pendingPrice.toFixed(2));
 	};
 
 	this.hideView = function(){

@@ -47,14 +47,17 @@ var InspectView = function (container, model) {
 		var sum = 0;
 
 		for(i = 0; i < dish.ingredients.length; i++ ) {
-			sum += dish.ingredients[i].MetricQuantity;
-			this.ingredientsList.append("<div class='col-md-4'>"+dish.ingredients[i].MetricQuantity*this.numPeople.val()+""+dish.ingredients[i].MetricUnit+"</div>"+
+			var quant = parseFloat(dish.ingredients[i].MetricQuantity.toFixed(2));
+			var quant2 = dish.ingredients[i].MetricQuantity;
+			sum += quant2;
+			this.ingredientsList.append("<div class='col-md-4'>"+quant*this.numPeople.val()+
+			""+dish.ingredients[i].MetricUnit+"</div>"+
 			"<div class='col-md-6'>"+dish.ingredients[i].IngredientInfo.Name+"</div>"+
 			"<div class='col-md-1'>SEK</div>"+
-			"<div class='col-md-1'>"+dish.ingredients[i].MetricQuantity*this.numPeople.val()+"</div>");
+			"<div class='col-md-1'>"+quant*this.numPeople.val()+"</div>");
 		}
 
-		this.totalPrice.append("SEK "+sum*this.numPeople.val());
+		this.totalPrice.append("SEK "+(sum*this.numPeople.val()).toFixed(2));
 		model.setPendingPrice(sum);
 	}
 
