@@ -20,23 +20,25 @@ var InspectView = function (container, model) {
 		this.totalPrice.html("");
 		this.ingredientsList.html("");
 
-		var dish = model.getDish(model.inspectedItem);
+		model.getDish(model.inspectedItem);
+		var dish = model.currentDish;
+
 
 		this.dishSpecific.append("<div class='dishItem'>"+
 			"<div class='row'><h2>"+ dish.name +"</h2></div>"+
-			"<div class='row'><img src='images/"+ dish.image +"'/></div>"+
+			"<div class='row'><img src='"+ dish.image +"'/></div>"+
 			"<div class='row'><h3>"+ dish.description +"</h3></div>"+
 			"</div>");
 
 		var sum = 0;
 
-		for(i = 0; i < dish.ingredients.length; i++ ) {
-			sum += dish.ingredients[i].price
-			this.ingredientsList.append("<div class='col-md-4'>"+dish.ingredients[i].quantity*this.numPeople.val()+""+dish.ingredients[i].unit+"</div>"+
-			"<div class='col-md-6'>"+dish.ingredients[i].name+"</div>"+
-			"<div class='col-md-1'>SEK</div>"+
-			"<div class='col-md-1'>"+dish.ingredients[i].price*this.numPeople.val()+"</div>");
-		}
+		// for(i = 0; i < dish.ingredients.length; i++ ) {
+		// 	sum += dish.ingredients[i].price
+		// 	this.ingredientsList.append("<div class='col-md-4'>"+dish.ingredients[i].quantity*this.numPeople.val()+""+dish.ingredients[i].unit+"</div>"+
+		// 	"<div class='col-md-6'>"+dish.ingredients[i].name+"</div>"+
+		// 	"<div class='col-md-1'>SEK</div>"+
+		// 	"<div class='col-md-1'>"+dish.ingredients[i].price*this.numPeople.val()+"</div>");
+		// }
 
 		this.totalPrice.append("SEK "+sum*this.numPeople.val());
 		model.setPendingPrice(sum);
@@ -68,6 +70,6 @@ var InspectView = function (container, model) {
 		this.updateInspect();
 	}
 
-	this.updateInspect();
-	this.update();
+	// this.updateInspect();
+	// this.update();
 }

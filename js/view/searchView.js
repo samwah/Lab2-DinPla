@@ -15,19 +15,22 @@ var SearchView = function (container, model) {
 		//alert("BEFORE");
 		//console.log("2: "+model.menuSearch);
 		//model.getRecipeJsonSearch(this.searchInput.val());
-		var dishes = obj;
 
 		console.log(obj);
 		//alert("AFTER");
 		//console.log("3: "+model.menuSearch);
-		console.log(dishes);
+
 		//var dishes = model.getAllDishes(this.dishType.val(),this.searchInput.val());
 
-		for(var i = 0; i < dishes.length; i++) {
-			this.dishList.append("<div class='col-md-3'><div class='dishItem'>"+
-				"<div class='row listItem imgCent'><a class='inspectItem' id='"+ dishes[i].RecipeID +"'><img src='images/"+ dishes[i].ImageURL +"' width='80%' height='80%'/></a></div>"+
-				"<div class='row listItem pad'><h2>"+ dishes[i].Title +"</h2></div>"+
-				"<div class='row listItem pad'><h6>"+ dishes[i].Cuisine +"</h6></div></div></div>");
+
+		for(var i = 0; i < obj.length; i++) {
+			var position = 33;
+			var output = ['http://images.bigoven.com/image/upload/t_recipe-128/', obj[i].image.slice(position)].join('');
+			
+			this.dishList.append("<div class='col-md-3 dishItem'>"+
+				"<div class='row listItem imgCent'><a class='inspectItem' id='"+ obj[i].id +"'><img src='"+ output +"'/></a></div>"+
+				"<div class='row listItem pad'><h2>"+ obj[i].name +"</h2></div>"+
+				"<div class='row listItem pad'><h6>"+ obj[i].type +"</h6></div></div>");
 		}
 		
 	}
@@ -53,11 +56,16 @@ var SearchView = function (container, model) {
 
 	this.update = function(obj){
 		this.updateView();
-		if (obj != undefined) {
-			alert('OBJ FOUND');
+		console.log('udating....');
+		console.log(obj);
+		if (typeof obj !== 'undefined') {
+			console.log('OBJ FOUND');
 			this.updateSearch(obj);		
 		}
-	
+		else {
+			console.log('undefined');
+		}
+		
 	}
 
 	//this.updateSearch();

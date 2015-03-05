@@ -68,6 +68,7 @@ h3 {
 
 .listItem {
 	background-color:rgba(60,150,150,0.5);
+	height: 100px;
 
 
 }
@@ -75,6 +76,7 @@ h3 {
 .imgCent{
 	text-align: center;
 	padding-top: 10px;
+	
 }
 
 

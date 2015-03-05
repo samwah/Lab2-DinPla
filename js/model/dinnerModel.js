@@ -11,6 +11,8 @@ var DinnerModel = function() {
 	this.pendingPrice = 0;
 	var apiKey = "dvxTU5WwHw2BY5uT8iYX278xv4DXbUBP";
 	this.menuSearch = [];
+	this.currentDish = [];
+
 
 	this.getRecipeJsonSearch = function(titleKeyword) {
         //var apiKey = "your-api-key-here";
@@ -22,30 +24,58 @@ var DinnerModel = function() {
             type: "GET",
             dataType: 'json',
             cache: false,
+            context: this,
             url: url,
             success: function (data) {
                 alert('success');
-                //console.log(data);
-                //this.menuSearch = data;
+                console.log(data.Results);
+                this.menuSearch = [];
+                //this.menuSearch = data.results;
                 //console.log("1: "+this.menuSearch);
-                this.notifyObservers(data);
+
+				for (n in data.Results){
+					currentData = data.Results[n];
+					// console.log(currentData);
+					// var currentName = currentData.Title;
+					// var currentType = currentData.Category;
+					// var currentImage =  currentData.ImageURL;
+					//var currentDescription = currentData.descöaehkf
+					// var id = data.
+					// this.menuSearch[n].id = data;
+
+					this.menuSearch.push({id: currentData.RecipeID, name: currentData.Title, type: currentData.Category, image: currentData.ImageURL});
+
+				}		
+
+				//console.log(data[2]);
+                this.notifyObservers(this.menuSearch);
             }
         });
 	}
-	        
-	this.getRecipeJsonFetch = function(recipeID) {
+
+
+	this.getDish = function(recipeID) {
 		//var apiKey = "your-api-key-here";
 		var url = "http://api.bigoven.com/recipe/" + recipeID + "?api_key="+apiKey;
 		$.ajax({
 	        type: "GET",
 	        dataType: 'json',
 	        cache: false,
+	        context: this,
 	        url: url,
 	        success: function (data) {
-	            alert('success');
-	            console.log(data.results);
+	            console.log(data);
+	            var dish = data;
+	            var dishArray = [];
+	            dishArray.push({id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL});
+	            this.currentDish = dishArray;
+	            this.notifyObservers();
+
 	        }
 		});
+
+		
+		
     }
         
 
@@ -180,13 +210,13 @@ var DinnerModel = function() {
 	}
 
 	//function that returns a dish of specific ID
-	this.getDish = function (id) {
-	  for(key in dishes){
-			if(dishes[key].id == id) {
-				return dishes[key];
-			}
-		}
-	}
+	// this.getDish = function (id) {
+	//   for(key in dishes){
+	// 		if(dishes[key].id == id) {
+	// 			return dishes[key];
+	// 		}
+	// 	}
+	// }
 
 
 	// the dishes variable contains an array of all the 
