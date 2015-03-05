@@ -9,7 +9,8 @@ var DinnerModel = function() {
 	this.observers = [];
 	var currentView = 1;
 	this.pendingPrice = 0;
-	var apiKey = "dvxTU5WwHw2BY5uT8iYX278xv4DXbUBP";
+	//var apiKey = "dvxTU5WwHw2BY5uT8iYX278xv4DXbUBP";
+	var apiKey= "dvxVMoURtQ38bKtLPt7dMRI95Tm07Lad";
 	this.menuSearch = [];
 	this.currentDish = [];
 

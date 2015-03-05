@@ -46,8 +46,6 @@ var InspectView = function (container, model) {
 		//model.pendingPrice = sum*this.numPeople.val();
 	}
 
-
-
 	this.hideView = function(){
 		container.hide();
 	}
@@ -62,14 +60,15 @@ var InspectView = function (container, model) {
 		} else {
 			this.hideView();
 		}
+
 		console.log(model.activeView())
 	}
 
 	this.update = function(obj){
 		this.updateView();
-		this.updateInspect();
+		//this.updateInspect();
 	}
 
 	// this.updateInspect();
-	// this.update();
+	this.update();
 }
