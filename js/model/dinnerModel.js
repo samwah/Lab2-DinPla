@@ -31,15 +31,24 @@ var DinnerModel = function() {
             success: function (data) {
                 this.menuSearch = [];
                 $("#loading").hide();
+                $("#errorMsg").html("");
+                console.log(data.Results);
 
-				for (n in data.Results){
-					currentData = data.Results[n];
-					this.menuSearch.push({id: currentData.RecipeID, name: currentData.Title, type: currentData.Category, image: currentData.ImageURL});
-				}		
-				this.notifyObservers(this.menuSearch);
+                if (typeof data.Results !== 'undefined' && data.Results.length > 0){
+                	
+					for (n in data.Results){
+						currentData = data.Results[n];
+						this.menuSearch.push({id: currentData.RecipeID, name: currentData.Title, type: currentData.Category, image: currentData.ImageURL});
+					}		
+					this.notifyObservers(this.menuSearch);
+				}
+				else{
+                	$("#errorMsg").html('"'+titleKeyword+'" did not return any results!');
+				}
             },
             error: function (jqXHR,textStatus,errorThrown){
-            	alert(errorThrown);
+            	$("#loading").hide();
+            	$("#errorMsg").html("<h1>An error has occured, please check your internet connnection and refresh the page</h1>");
             }
         });
 	}
@@ -62,7 +71,8 @@ var DinnerModel = function() {
 	            this.notifyObservers(this.currentDish);
 	        },
 	        error: function (jqXHR,textStatus,errorThrown){
-            	alert(errorThrown);
+            	$("#loading").hide();
+            	$("#errorMsg2").html("<h1>An error has occured, please check your internet connnection and refresh the page</h1>");
             }
 		});
 
