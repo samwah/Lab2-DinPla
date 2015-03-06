@@ -97,6 +97,15 @@ h3 {
 	/*border:solid 2px;*/
 }
 
+.inspectedItem {
+
+	background-color:rgba(90,150,187,1);
+	margin: 0px;
+	padding: 10px;
+	min-height: 0px;
+	/*border:solid 2px;*/
+}
+
 .listItem {
 	background-color:rgba(60,150,150,0.5);
 	height: 100px;

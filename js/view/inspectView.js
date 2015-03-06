@@ -29,7 +29,7 @@ var InspectView = function (container, model) {
 		}
 
 
-		this.dishSpecific.append("<div class='dishItem'>"+
+		this.dishSpecific.append("<div class='inspectedItem'>"+
 			"<div><h2>"+ dish.name +"</h2></div>"+
 			"<div><img src='"+ dish.image +"' height='50%' width='50%'/></div>"+
 			"<div><h3>"+ dish.desc +"</h3></div>"+
