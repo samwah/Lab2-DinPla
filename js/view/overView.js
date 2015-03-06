@@ -40,7 +40,7 @@ var OverView = function (container, model) {
 				sum += dishes[i].ingredients[j].MetricQuantity;
 				}
 
-				this.dishList.append("<div class='col-md-3'><div class='dishItem'>"+
+				this.dishList.append("<div class='col-md-3'><div class='inspectedItem'>"+
 					"<div><img src='"+ dishes[i].image +"' height='50%' width='50%'/></div>"+
 					"<div><h2>"+ dishes[i].name +"</h2></div>"+
 					"<div><h3>"+ (sum*model.getNumberOfGuests()).toFixed(2) +" SEK</h3></div></div></div>");
