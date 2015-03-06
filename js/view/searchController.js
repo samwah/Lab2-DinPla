@@ -10,7 +10,7 @@ var SearchController = function(view, model) {
 	 view.searchButton.click(function(){
 	 	//
 	 	//model.notifyObservers();
-	 	model.getRecipeJsonSearch(view.searchInput.val());
+	 	model.getRecipeJsonSearch(view.searchInput.val(),view.searchType.val());
 	 	//view.updateSearch(); //DISCLAIMER FIX THIS DIRTY BRO
 	 });
 

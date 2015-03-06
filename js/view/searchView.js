@@ -3,7 +3,7 @@ var SearchView = function (container, model) {
 
 	model.addObserver(this);
 
-	this.dishType = container.find("#dishType");
+	this.searchType = container.find("#dishType");
 	this.dishList = container.find("#dishList");
 	this.searchButton = container.find("#search");
 	this.searchInput = container.find("#searchInput");

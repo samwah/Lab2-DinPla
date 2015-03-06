@@ -25,7 +25,7 @@ var MyDinnerView = function (container, model) {
 
 	var updatePending = function(numGuests) {
 
-		var output = "<ul>";
+		var output = "";
 
 
 		for (item in model.menu){
@@ -37,14 +37,14 @@ var MyDinnerView = function (container, model) {
 				}
 			sum = parseFloat(sum.toFixed(2));
 
-			output = output + "<div class='row'><div class='col-md-6'><a class='inspect_link' id="+model.menu[item].id+">"+model.menu[item].name+"</a></div>"+
-			"<div class='col-md-offset-2 col-md-4'> "+sum*numGuests+""+
-			"<button id='"+model.menu[item].id+"' class='remove_btn'>X</button>"+"</div></div>";
+			output = output + "<div class='row'><div class='col-md-8'><a class='inspect_link' id="+model.menu[item].id+">"+model.menu[item].name+"</a></div>"+
+			"<div class='col-md-4'> "+sum*numGuests+""+
+			"<button id='"+model.menu[item].id+"' class='remove_btn btn'>X</button>"+"</div></div>";
 
 			console.log(model.menu[item].id);
 		}
 
-		output = output + "</ul>";
+		output = output;
 		this.pendingList.innerHTML = output;
 
 		if(model.getView() == 2){
@@ -55,7 +55,7 @@ var MyDinnerView = function (container, model) {
 			this.pendingFirst.innerHTML = parseFloat(model.pendingPrice.toFixed(2));
 		}
 
-		this.pendingCost.innerHTML = model.getTotalMenuPrice()+parseFloat(model.pendingPrice.toFixed(2));
+		this.pendingCost.innerHTML = parseFloat((model.getTotalMenuPrice()+model.pendingPrice).toFixed(2));
 	};
 
 	this.hideView = function(){

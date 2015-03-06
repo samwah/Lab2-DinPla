@@ -24,11 +24,15 @@ var InspectView = function (container, model) {
 		var dish = model.currentDish;
 		console.log(dish);
 
+		if(dish.desc == ''){
+			dish.desc = 'No description was found!'
+		}
+
 
 		this.dishSpecific.append("<div class='dishItem'>"+
 			"<div><h2>"+ dish.name +"</h2></div>"+
 			"<div><img src='"+ dish.image +"' height='50%' width='50%'/></div>"+
-			"<div><h3>"+ dish.description +"</h3></div>"+
+			"<div><h3>"+ dish.desc +"</h3></div>"+
 			"</div>");
 
 		this.displayIngredients();
@@ -50,11 +54,11 @@ var InspectView = function (container, model) {
 			var quant = parseFloat(dish.ingredients[i].MetricQuantity.toFixed(2));
 			var quant2 = dish.ingredients[i].MetricQuantity;
 			sum += quant2;
-			this.ingredientsList.append("<div class='col-md-4'>"+quant*this.numPeople.val()+
+			this.ingredientsList.append("<div class='col-md-3'>"+quant*this.numPeople.val()+
 			""+dish.ingredients[i].MetricUnit+"</div>"+
 			"<div class='col-md-6'>"+dish.ingredients[i].IngredientInfo.Name+"</div>"+
 			"<div class='col-md-1'>SEK</div>"+
-			"<div class='col-md-1'>"+quant*this.numPeople.val()+"</div>");
+			"<div class='col-md-2'>"+quant*this.numPeople.val()+"</div>");
 		}
 
 		this.totalPrice.append("SEK "+(sum*this.numPeople.val()).toFixed(2));
@@ -71,6 +75,9 @@ var InspectView = function (container, model) {
 
 	this.updateView = function(){
 		if (model.activeView()==3) {
+			$("#dishSpecific").html("");
+			$("#totalPrice").html("");
+			$("#insert_ing").html("");
 			this.showView();
 		} else {
 			this.hideView();

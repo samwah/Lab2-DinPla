@@ -16,7 +16,7 @@ var DinnerModel = function() {
 	$("#loading").hide();
 
 
-	this.getRecipeJsonSearch = function(titleKeyword) {
+	this.getRecipeJsonSearch = function(titleKeyword,searchType) {
         var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="
                   + titleKeyword 
                   + "&api_key="+apiKey;
@@ -56,7 +56,8 @@ var DinnerModel = function() {
 
 	this.getDish = function(recipeID) {
 		var url = "http://api.bigoven.com/recipe/" + recipeID + "?api_key="+apiKey;
-		$("#loading").show();
+		$("#loading2").show();
+
 		$.ajax({
 	        type: "GET",
 	        dataType: 'json',
@@ -64,17 +65,14 @@ var DinnerModel = function() {
 	        context: this,
 	        url: url,
 	        success: function (data) {
-	        	$("#loading").hide();
+	        	$("#loading2").hide();
 	            var dish = data;
 	            console.log(dish);
 	            this.currentDish = {id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL, ingredients: dish.Ingredients, inst: dish.Instructions, desc: dish.Description};
 	            this.notifyObservers(this.currentDish);
 	        },
 	        error: function (jqXHR,textStatus,errorThrown){
-	        	$("#dishSpecific").html("");
-				$("#totalPrice").html("");
-				$("#insert_ing").html("");
-            	$("#loading").hide();
+            	$("#loading2").hide();
             	$("#errorMsg2").html("<h1>An error has occured, please check your internet connnection and refresh the page</h1>");
             }
 		});
