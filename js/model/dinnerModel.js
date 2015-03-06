@@ -43,7 +43,7 @@ var DinnerModel = function() {
 					this.notifyObservers(this.menuSearch);
 				}
 				else{
-                	$("#errorMsg").html('"'+titleKeyword+'" did not return any results!');
+                	$("#errorMsg").html('<h2>"'+titleKeyword+'" did not return any results!<h2>');
 				}
             },
             error: function (jqXHR,textStatus,errorThrown){
@@ -67,10 +67,13 @@ var DinnerModel = function() {
 	        	$("#loading").hide();
 	            var dish = data;
 	            console.log(dish);
-	            this.currentDish = {id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL, ingredients: dish.Ingredients};
+	            this.currentDish = {id: dish.RecipeID, name: dish.Title, type: dish.Category, image: dish.ImageURL, ingredients: dish.Ingredients, inst: dish.Instructions, desc: dish.Description};
 	            this.notifyObservers(this.currentDish);
 	        },
 	        error: function (jqXHR,textStatus,errorThrown){
+	        	$("#dishSpecific").html("");
+				$("#totalPrice").html("");
+				$("#insert_ing").html("");
             	$("#loading").hide();
             	$("#errorMsg2").html("<h1>An error has occured, please check your internet connnection and refresh the page</h1>");
             }

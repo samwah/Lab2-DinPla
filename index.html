@@ -16,8 +16,8 @@
   	<!-- Homelette Banner bar -->
 
 
+  	
 
-  	<div id="loading"><img class="imgCent" src='loading.gif'></img></div>
 
 
   	<nav class="navbar navbar-default navbar-fixed-top">
@@ -57,20 +57,21 @@
 	--> 
 	<div class="container" id="superContainer">
 	<!-- start welcomePage -->
-	
-		<div class="col-md-12" id="welcomeView">
-			<div class="row">
-				<div class="col-md-offset-1 col-md-4"><h2>A Home Dinner Service</h2>
+		<div class="row">
+			<div class="col-md-12" id="welcomeView">
+				<div class="row">
+					<div class="col-md-offset-1 col-md-4"><h2>A Home Dinner Service</h2>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-offset-1 col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus sollicitudin lacus, vitae venenatis diam interdum nec. Pellentesque efficitur lacinia sollicitudin. Aenean hendrerit sapien vel egestas lobortis. Nullam semper leo et lacinia porta. In non facilisis elit. Pellentesque diam risus, dignissim vitae lorem ac, dignissim semper enim.
-				</br>
-				</br>
-				</br>
-				Start quickly
-				</br>
-				<button id="newDinnerButton" class="btn">Create new dinner</button>
+				<div class="row">
+					<div class="col-md-offset-1 col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus sollicitudin lacus, vitae venenatis diam interdum nec. Pellentesque efficitur lacinia sollicitudin. Aenean hendrerit sapien vel egestas lobortis. Nullam semper leo et lacinia porta. In non facilisis elit. Pellentesque diam risus, dignissim vitae lorem ac, dignissim semper enim.
+					</br>
+					</br>
+					</br>
+					Start quickly
+					</br>
+					<button id="newDinnerButton" class="btn">Create new dinner</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -133,6 +134,7 @@
 					</div>
 					<div class="col-md-12">
 						<div id="dishList">
+							<div id="loading"><img class="imgCent" src='loading.gif' width="100%" ></img></div>
 							<span id="errorMsg"></span>
 						</div>
 					</div>
@@ -144,7 +146,8 @@
 				<div class="col-md-12" id="inspectView">
 
 					<div class="col-md-6" id="oneDishCol1">
-						<div id="dishSpecific"><span id="errorMsg2"></span></div>
+						<span id="errorMsg2"></span>
+						<div id="dishSpecific"></div>
 						<button id='goBack' class='btn'>back to Select dish</button>
 					</div>
 
@@ -157,11 +160,8 @@
 								<div class="col-md-3" id="totalprice"></div>
 							</div>
 					</div>
-
 				</div>
-
 			</div>
-
 		</div>
 
 		<div class="row" id="lastPage">

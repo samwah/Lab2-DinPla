@@ -37,17 +37,17 @@ var OverView = function (container, model) {
 
 				var sum = 0;
 				for(j = 0; j < dishes[i].ingredients.length; j++ ) {
-				sum += dishes[i].ingredients[j].price;
+				sum += dishes[i].ingredients[j].MetricQuantity;
 				}
 
 				this.dishList.append("<div class='col-md-3'><div class='dishItem'>"+
-					"<div class='row'><img src='images/"+ dishes[i].image +"'/></div>"+
-					"<div class='row'><h2>"+ dishes[i].name +"</h2></div>"+
-					"<div class='row'><h3>"+ sum*model.getNumberOfGuests() +" SEK</h3></div></div></div>");
+					"<div><img src='"+ dishes[i].image +"' height='50%' width='50%'/></div>"+
+					"<div><h2>"+ dishes[i].name +"</h2></div>"+
+					"<div><h3>"+ (sum*model.getNumberOfGuests()).toFixed(2) +" SEK</h3></div></div></div>");
 				totalsum += sum*model.getNumberOfGuests();
 			}
 
-			this.totalprice.append("SEK "+totalsum);
+			this.totalprice.append("SEK "+totalsum.toFixed(2));
 
 		}
 		else{
@@ -57,13 +57,17 @@ var OverView = function (container, model) {
 
 			for(i = 0; i < dishes.length; i++) {
 
-			this.dishList.append("<div class='row'>"+
+				if(dishes[i].desc == ''){
+					dishes[i].desc = 'No description was found!'
+				}
+
+				this.dishList.append("<div class='row'>"+
 				"<div class='dishItem'>"+
-				"<div class='col-md-4'><img src='images/"+ dishes[i].image +"'/></div>"+
+				"<div class='col-md-4'><img src='"+ dishes[i].image +"' height='70%' width='70%'/></div>"+
 				"<div class='col-md-4'><div class='row'><h1>"+ dishes[i].name +"</h1></div>"+
-				"<div class='row'><h3>"+ dishes[i].description +"</h3></div></div>"+
+				"<div class='row'><h3>"+ dishes[i].desc +"</h3></div></div>"+
 				"<div class='col-md-4'><div class='row'><h2>Preperation</h2></div>"+
-				"<div class='row'><h3>"+ dishes[i].description +"</h3></div></div></div>"+
+				"<div class='row'><h3>"+ dishes[i].inst +"</h3></div></div></div>"+
 				"</div></div>");
 			}
 		}
