@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dinner planner</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+
+  	<div id="loading"><img class="imgCent" src='loading.gif' width="100px" ><font color="#CCC"><b>LOADING</b></font></img></div>
+
+
+
+	<div class="container" id="superContainer">
+
+		<div class="row">
+			<div class="col-md-12" id="welcomeView">
+				<div class="row">
+					<div class="col-md-offset-1 col-md-4"><h2>A Home Dinner Service</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-offset-1 col-md-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus sollicitudin lacus, vitae venenatis diam interdum nec. Pellentesque efficitur lacinia sollicitudin. Aenean hendrerit sapien vel egestas lobortis. Nullam semper leo et lacinia porta. In non facilisis elit. Pellentesque diam risus, dignissim vitae lorem ac, dignissim semper enim.
+					</br>
+					</br>
+					</br>
+					Start quickly
+					</br>
+					<button id="newDinnerButton" class="btn">Create new dinner</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-12"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+
+		<div class="row" id="mainView">
+
+			<div class="col-md-3" id="leftCol1">
+				<h4>My dinner</h4>
+				
+				<div class="col-md-6" id="numberOfGuests"></div>
+
+				<div class="col-md-6">
+	          		<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+					<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+				</div>
+				<div class="col-md-12">
+					<div class="row" id="dishName">
+							<div class="col-md-8">Dish Name</div>
+							<div class="col-md-4">Cost</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12" id="pendingList">-</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8">Pending</div>
+						<div class="col-md-4" id="pendingFirst">0.00</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8">SEK</div>
+						<div class="col-md-4"  id="pendingCost">0.00</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12"><button id="confirmDinner" class="btn">Confirm Dinner</button></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-9" id="mainCol1">
+				<div class="row">
+					<div id="searchView">
+						<div class="col-md-12" id="searchBar">
+							<h4>Select Dish</h4>
+							<hr>
+							<input id="searchInput" type="text" placeholder="Enter key words" value=""></input>
+							<button id="search" class="btn">search</button></input>
+							<select id="dishType">
+							  <option value="main dish">Main</option>
+							  <option value="starter">Starter</option>
+							  <option value="dessert">Dessert</option>
+							</select>
+						</div>
+						<div class="row">
+							<div id="dishList">
+							</div>
+						</div>
+					</div>
+				</row>
+
+				<div class="row" id="inspectView">
+
+					<div class="col-md-6" id="oneDishCol1">
+						<div class="row">
+							<div class="col-md-12">
+								<div id="dishSpecific"></div>
+								<button id='goBack' class='btn'>back to Select dish</button>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-6 oPanel" id="oneDishCol2">
+							<div class="row">
+								<div class="col-md-12" id='numPeople'></div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-12" id="insert_ing"></div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-9"><a id="confirmDish" class="btn">Confirm Dish</a></div>
+								<div class="col-md-3" id="totalprice"></div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row" id="lastPage">
+
+			<!-- Main column-->
+			<div class="col-md-12" id="mainCol2">
+
+				<div class="col-md-12"  id="overView"> <!-- search and list -->
+
+					<div class="row" style="background-color:#f1c745">
+						<div class="col-md-10" id="numberOfGuests" ></div>
+						<div class="col-md-2">
+							<a id="goBackEdit" class="btn">go back and edit dinner</a>
+						</div>
+					</div>
+					<div class="row" style="background-color:white">
+						<div class="col-md-11">
+							<div id="dishList">
+							</div>
+						</div>
+						<div id="priceDiv" class="col-md-1">
+							<h2>Total price:</h2>
+							<div id="totalPriceFinal">
+							</div>
+						</div>
+					</div>
+					<div class="row" style="background-color:white">
+						<a id="goPrep" class="btn">Print Full recipe</a>
+					</div>
+					
+				</div>
+
+				<!-- First row, dinner+back-btn etc. -->
+				<div class="row" id="topRow2">
+				</div>
+
+				<!-- Main row, all dishes, ingredients final prep etc. -->
+				<div class="row" id="midRow2">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+	<!-- The application JavaScript code -->
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script>
+
+	<script src="js/view/myDinnerView.js"></script>
+	<script src="js/view/myDinnerController.js"></script>
+
+	<script src="js/view/welcomeView.js"></script>
+	<script src="js/view/welcomeController.js"></script>
+
+	<script src="js/view/searchView.js"></script>
+	<script src="js/view/searchController.js"></script>
+
+	<script src="js/view/overView.js"></script>
+	<script src="js/view/overController.js"></script>
+
+	<script src="js/view/inspectView.js"></script>
+	<script src="js/view/inspectController.js"></script>
+
+	<script src="js/view/mainView.js"></script>
+	<script src="js/view/mainController.js"></script>
+
+	<!-- <script src="js/view/exampleViewController.js"></script> -->
+  </body>
+</html>
