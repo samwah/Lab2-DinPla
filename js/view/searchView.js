@@ -48,9 +48,12 @@ var SearchView = function (container, model) {
 
 	this.updateView = function(){
 		if (model.activeView()==2) {
+
 			this.showView();
 		} else {
+
 			this.hideView();
+
 		}
 		//console.log("searchView: "+model.activeView())
 	}

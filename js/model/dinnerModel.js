@@ -18,7 +18,7 @@ var DinnerModel = function() {
 
 	this.getRecipeJsonSearch = function(titleKeyword,searchType) {
         var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="
-                  + titleKeyword 
+                  + titleKeyword +" "+ searchType 
                   + "&api_key="+apiKey;
 
         $("#loading").show();
@@ -43,6 +43,8 @@ var DinnerModel = function() {
 					this.notifyObservers(this.menuSearch);
 				}
 				else{
+					console.log('No results');
+					$('#dishList').html("");
                 	$("#errorMsg").html('<h2>"'+titleKeyword+'" did not return any results!<h2>');
 				}
             },
