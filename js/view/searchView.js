@@ -26,12 +26,12 @@ var SearchView = function (container, model) {
 		for(var i = 0; i < obj.length; i++) {
 			
 			var position = 33;
-			var output = ['http://images.bigoven.com/image/upload/t_recipe-128/', obj[i].image.slice(position)].join('');
+			var output = ['http://images.bigoven.com/image/upload/t_recipe-256/', obj[i].image.slice(position)].join('');
 
-			this.dishList.append("<div class='col-md-3 dishItem'>"+
-				"<div ><a class='inspectItem' id='"+ obj[i].id +"'><img src='"+ output +"'/></a></div>"+
-				"<div ><h3>"+ obj[i].name +"</h3></div>"+
-				"<div ><h6>"+ obj[i].type +"</h6></div></div>");
+			this.dishList.append("<div class='col-md-3 dishItem'><div class='innerItem'>"+
+				"<div><a class='inspectItem' id='"+ obj[i].id +"'><img src='"+ output +"' width='100%' height='100%' /></a></div>"+
+				"<div class='col-md-12'><div><h3>"+ obj[i].name +"</h3></div>"+
+				"<div><h6>"+ obj[i].type +"</h6></div></div></div></div>");
 		}
 		
 	}

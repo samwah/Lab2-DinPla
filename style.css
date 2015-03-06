@@ -90,12 +90,18 @@ h3 {
 
 .dishItem {
 
-	background-color:rgba(90,150,187,1);
-	margin: 25px;
+	/*background-color:rgba(90,150,187,1);*/
 	padding-top: 5px;
-	min-height: 220px;
+	margin: 0px;
+	min-height: 280px;
 	/*border:solid 2px;*/
 }
+
+.innerItem{
+	background-color:rgba(90,150,187,1);
+	min-height: 280px;
+}
+
 
 .inspectedItem {
 
@@ -116,6 +122,7 @@ h3 {
 
 #searchBar {
 	background-color:rgba(90,150,187,0.75);
+	padding:5px;
 }
 
 #superContainer {
