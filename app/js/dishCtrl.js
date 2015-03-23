@@ -2,17 +2,16 @@
 // information for one dish
 dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 
-	//$scope.showRoute = $routingParams.dishId;
+	$scope.showRoute = $routeParams.dishId;
 
-	$scope.fetchDish = function() {
-		$scope.status = "Searching...";
-  		Dinner.Dish.get({id:$routingParams.dishId},function(data){
-			$scope.oneDish=data.Results;
-			$scope.status = "Showing " + data.Results.length + " results";
-		},function(data){
-			$scope.status = "There was an error";
-		});
-  	}
+	$scope.status = "Searching...";
+		Dinner.Dish.get({id:$routeParams.dishId},function(data){
+		$scope.dish=data;
+		//$scope.status = "Showing " + data.Results.length + " results";
+		$scope.status = "Success";
+	},function(data){
+		$scope.status = "There was an error";
+	});
 
   // TODO in Lab 5: you need to get the dish according to the routing parameter
   // $routingParams.paramName

@@ -3,16 +3,14 @@
 
 <!-- FIX AND CHANGE THIS -->
 
-<button ng-click="FetchDish()">Find</button>
+<button ng-click="fetchDish()">GET SPECIFIC DISH</button>
+{{showRoute}}
 {{status}}
 
-<ul>
-	<li>
-	<img ng-src="{{oneDish.ImageURL}}"/>
+<div ng-model="dish" ng-change="fetchDish()">
+	<img ng-src="{{dish.ImageURL}}"/>
 	{{oneDish.Title}}
-	<a ng-href="#/dish/{{oneDish.RecipeID}}">View more</a>
-	{{oneDish.Category}} {{oneDish.Subcategory}}
-	</li>
-</ul>
+</div>
+
 <!-- TODO in Lab 5: Display the dish information including image, Description, 
 Instructions, Ingredients and total cost. -->
