@@ -1,6 +1,7 @@
+<div id="sidebar" class="col-sm-3 full-height">
 
-
-People: <input type="number" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)"/>
+<label for="guest_count">Guests</label>
+<input id="guest_count" type="number" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)"/>
 
 <!-- TODO in Lab 5: Display the items on the menu with cost for each -->
 
@@ -15,3 +16,5 @@ Total number of guest: {{getNumberOfGuests()}}
 			{{dish.Title}}
 		</div>
 	</div>
+
+</div>

@@ -52,8 +52,8 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     for(key in menu){
       if(menu[key].id == id) {
         for(i = 0; i<menu[key].ingredients.length; i++){
-          console.log("ingredient price"+menu[key].ingredients[i].price);
-          sum += menu[key].ingredients[i].price;
+          console.log("ingredient price"+menu[key].ingredients[i].MetricQuantity);
+          sum += menu[key].ingredients[i].MetricQuantity;
         }
       }
     }
