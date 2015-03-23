@@ -8,8 +8,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 //var apiKey = "dvxTU5WwHw2BY5uT8iYX278xv4DXbUBP";
   var apiKey= "dvxVMoURtQ38bKtLPt7dMRI95Tm07Lad";
 
-  $scope.numberOfGuests = Dinner.getNumberOfGuests();
-
   var numberOfGuests = 2;
   var menu = [];
   this.inspectedItem = 1;
