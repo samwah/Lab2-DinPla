@@ -2,7 +2,19 @@
 // display or modify the dinner menu
 dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 
+	//var apiKey = "dvxTU5WwHw2BY5uT8iYX278xv4DXbUBP";
+	var apiKey= "dvxVMoURtQ38bKtLPt7dMRI95Tm07Lad";
+
 	$scope.numberOfGuests = Dinner.getNumberOfGuests();
+
+	var numberOfGuests = 2;
+	this.inspectedItem = 1;
+	this.menu = [];
+	this.pendingPrice = 0;
+	this.currentDish = {};
+
+	this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:apiKey});
+	this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:apiKey}); 
 
 	$scope.setNumberOfGuest = function(number){
 		Dinner.setNumberOfGuests(number);
@@ -10,25 +22,6 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 
 	$scope.getNumberOfGuests = function() {
 		return Dinner.getNumberOfGuests();
-	}
-
-
-	var numberOfGuests = 2;
-	this.inspectedItem = 1;
-	this.menu = [];
-	var currentView = 1;
-	this.pendingPrice = 0;
-	//var apiKey = "dvxTU5WwHw2BY5uT8iYX278xv4DXbUBP";
-	var apiKey= "dvxVMoURtQ38bKtLPt7dMRI95Tm07Lad";
-	this.menuSearch = [];
-	this.currentDish = {};        
-
-	this.setNumberOfGuests = function(num) {
-		numberOfGuests = num;
-	}
-
-	this.getNumberOfGuests = function() {
-		return numberOfGuests;
 	}
 
 	this.getSelectedDish = function(type) {
