@@ -17,6 +17,14 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:apiKey});
   this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:apiKey}); 
 
+  this.setNumberOfGuests = function(number) {
+    numberOfGuests = number;
+  }
+
+  this.getNumberOfGuests = function() {
+    return numberOfGuests;
+  }
+
   this.getSelectedDish = function(type) {
     for(key in menu){
       if(menu[key].type == type){
