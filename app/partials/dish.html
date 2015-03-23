@@ -3,7 +3,8 @@
 
 <!-- FIX AND CHANGE THIS -->
 
-<button ng-click="fetchDish()">GET SPECIFIC DISH</button>
+<button ng-click="fetchDish()">Add dish to menu</button>
+
 {{showRoute}}
 {{status}}
 
@@ -12,11 +13,12 @@
 
 	{{dish.Title}}</br>
 	{{dish.Description}}
-
-	<li ng-repeat="ingredient in dish.Ingredients">
-		{{ingredient.Name}} {{ingredient.MetricQuantity}} {{ingredient.MetricUnit}}
-	</li>
-
+	
+	<ul>
+		<li ng-repeat="ingredient in dish.Ingredients">
+			{{ingredient.Name}} {{ingredient.MetricQuantity}} {{ingredient.MetricUnit}}
+		</li>
+	</ul>
 	{{dish.Instructions}}
 </div>
 
