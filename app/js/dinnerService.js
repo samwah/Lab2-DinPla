@@ -72,8 +72,8 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     return parseFloat(sum*numberOfGuests.toFixed(2));
   }
 
-  this.addDishToMenu = function(id) {
-    menu.push(this.currentDish);
+  this.addDishToMenu = function(dish) {
+    menu.push(dish);
   }
 
   //Removes dish from menu
