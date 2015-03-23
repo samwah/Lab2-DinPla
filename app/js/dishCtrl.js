@@ -2,10 +2,12 @@
 // information for one dish
 dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 
-	$scope.fetchDish = function(query) {
+	//$scope.showRoute = $routingParams.dishId;
+
+	$scope.fetchDish = function() {
 		$scope.status = "Searching...";
-  		Dinner.Dish.get({id:$routingParams.id},function(data){
-			$scope.dish=data.Results;
+  		Dinner.Dish.get({id:$routingParams.dishId},function(data){
+			$scope.oneDish=data.Results;
 			$scope.status = "Showing " + data.Results.length + " results";
 		},function(data){
 			$scope.status = "There was an error";
