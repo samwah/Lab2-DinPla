@@ -18,15 +18,14 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 
 	$scope.addDishToMenu = function(dish){
 		Dinner.addDishToMenu(dish);
-		console.log($scope.menu);
 	}
 
 	$scope.getDishPrice = function(dish){
 		Dinner.getDishPrice(dish);
 	}
 
-	$scope.removeDishFromMenu = function(dish){
-		Dinner.removeDishFromMenu(dish);
+	$scope.removeDishFromMenu = function(id){
+		Dinner.removeDishFromMenu(id);
 	}
 
 	$scope.getTotalMenuPrice = function(){

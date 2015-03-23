@@ -10,10 +10,16 @@
 	this with Total price of the menu -->
 	<!--Total number of guest: {{getNumberOfGuests()}}-->
 
-
-	<div ng-repeat="dish in getFullMenu()">
-		<div>
-			{{dish.Title}}
+	<div>
+		<h4>Menu</h4>
+		<div ng-repeat="dish in getFullMenu()">
+			<div>
+				<a ng-href="#/dish/{{dish.RecipeID}}">{{dish.Title}}</a>
+				<div>
+					<!--{{getDishPrice(dish)}}-->
+				</div>
+				<button ng-click="removeDishFromMenu(dish.RecipeID)">X</button>
+			</div>
 		</div>
 	</div>
 

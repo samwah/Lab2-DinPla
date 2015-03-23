@@ -22,7 +22,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   }
 
   this.getNumberOfGuests = function() {
-    return numberOfGuests;
+    return parseInt(numberOfGuests);
   }
 
   this.getSelectedDish = function(type) {
@@ -47,16 +47,13 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     return list_ingredients;
   }
 
-  this.getDishPrice = function(id){
+  this.getDishPrice = function(dish){
     var sum = 0;
-    for(key in menu){
-      if(menu[key].id == id) {
-        for(i = 0; i<menu[key].ingredients.length; i++){
-          console.log("ingredient price"+menu[key].ingredients[i].MetricQuantity);
-          sum += menu[key].ingredients[i].MetricQuantity;
-        }
-      }
+    for(key in dish.Ingredients){
+      sum += dish.Ingredients[key].MetricQuantity;
     }
+
+    console.log("sum:"+sum)
     return sum;
   }
 
@@ -68,23 +65,24 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
       //alert("ingredient.price");
       sum = sum + list_ingredients[ing].MetricQuantity;
     }
-
+    console.log("TotalMenuPrice: "+sum);
     return parseFloat(sum*numberOfGuests.toFixed(2));
   }
 
   this.addDishToMenu = function(dish) {
     menu.push(dish);
-    console.log("New menu: "+menu)
+    console.log("New menu: "+menu);
   }
 
   //Removes dish from menu
   this.removeDishFromMenu = function(id) {
     for(key in menu){
-      if(menu[key].id == id) {
-        //console.log(key);
+      if(menu[key].RecipeID == id) {
         menu.splice(key,1);
+        console.log("Menu after remove: "+menu);
       }
     }
+    console.log("Dish item removed");
   }
 
   // TODO in Lab 5: Add your model code from previous labs
