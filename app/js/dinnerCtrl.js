@@ -8,8 +8,8 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 	$scope.numberOfGuests = Dinner.getNumberOfGuests();
 
 	var numberOfGuests = 2;
+	var menu = [];
 	this.inspectedItem = 1;
-	this.menu = [];
 	this.pendingPrice = 0;
 	this.currentDish = {};
 
@@ -25,22 +25,22 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 	}
 
 	this.getSelectedDish = function(type) {
-		for(key in this.menu){
-			if(this.menu[key].type == type){
-				return this.menu[key];
+		for(key in menu){
+			if(menu[key].type == type){
+				return menu[key];
 			}
 		}
 	}
 
 	this.getFullMenu = function() {
-		return this.menu;
+		return menu;
 	}
 
 	this.getAllIngredients = function() {
 		var list_ingredients = [];
 
-		for(key in this.menu){
-			list_ingredients = list_ingredients.concat(this.menu[key].ingredients);
+		for(key in menu){
+			list_ingredients = list_ingredients.concat(menu[key].ingredients);
 		}
 
 		return list_ingredients;
@@ -48,11 +48,11 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 
 	this.getDishPrice = function(id){
 		var sum = 0;
-		for(key in this.menu){
-			if(this.menu[key].id == id) {
-				for(i = 0; i<this.menu[key].ingredients.length; i++){
-					console.log("FOKC"+this.menu[key].ingredients[i].price);
-					sum += this.menu[key].ingredients[i].price;
+		for(key in menu){
+			if(menu[key].id == id) {
+				for(i = 0; i<menu[key].ingredients.length; i++){
+					console.log("FOKC"+menu[key].ingredients[i].price);
+					sum += menu[key].ingredients[i].price;
 				}
 			}
 		}
@@ -72,15 +72,15 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 	}
 
 	this.addDishToMenu = function(id) {
-		this.menu.push(this.currentDish);
+		menu.push(this.currentDish);
 	}
 
-	//Removes dish from this.menu
+	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-	  for(key in this.menu){
-			if(this.menu[key].id == id) {
+	  for(key in menu){
+			if(menu[key].id == id) {
 				//console.log(key);
-				this.menu.splice(key,1);
+				menu.splice(key,1);
 			}
 		}
 	}
