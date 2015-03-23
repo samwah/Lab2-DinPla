@@ -3,8 +3,6 @@
 
 <!-- FIX AND CHANGE THIS -->
 
-<button ng-click="fetchDish()">Add dish to menu</button>
-
 {{showRoute}}
 {{status}}
 
@@ -21,8 +19,8 @@
 	</ul>
 	{{dish.Instructions}}
 
-	<a ng-href="#/search" ng-click="addDishToMenu(dish)">Confirm Dish</a>
-	
+	<a ng-href="#/search" ng-click="addDishToMenu(dish)" class="btn btn-primary">Confirm Dish</a>
+
 </div>
 
 <!-- TODO in Lab 5: Display the dish information including image, Description, 
