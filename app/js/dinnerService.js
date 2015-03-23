@@ -74,6 +74,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 
   this.addDishToMenu = function(dish) {
     menu.push(dish);
+    console.log("New menu: "+menu)
   }
 
   //Removes dish from menu
