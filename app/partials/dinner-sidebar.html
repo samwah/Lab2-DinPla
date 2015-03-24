@@ -22,15 +22,25 @@
 		<tbody>
 			<tr ng-repeat="dish in getFullMenu()">
 				<td><a ng-href="#/dish/{{dish.RecipeID}}">{{dish.Title}}</a></td>
-				<td>{{(getDishPrice(dish)*getNumberOfGuests()).toFixed(2)}} kr</td>
+				<td>{{getDishPrice(dish)}} kr</td>
 				<td>{{dish.Category}}</td>
 				<td><button class="btn btn-danger btn-xs" ng-click="removeDishFromMenu(dish.RecipeID)">X</button></td>
+			</tr>
+			<tr ng-controller="DishCtrl">
+				<td>Pending Cost</td>
+				<td ng-if="dish">{{getDishPrice(dish)}} kr</td>
+				<td ng-if="dish == null">0.00 kr</td>
+			</tr>
+			<tr ng-controller="DishCtrl">
+				<td>Total Cost</td>
+				<td ng-if="dish">{{getTotalMenuPrice()+getDishPrice(dish)}} kr</td>
+				<td ng-if="dish == null">{{getTotalMenuPrice()}} kr</td>
 			</tr>
 		</tbody>
 	</table>
 
-	<div>
-		<a ng-href="#/overview" class="btn btn-success">Confirm Dinner</a>
+	<div class="text-center" style="padding-bottom:10px">
+		<a ng-href="#/overview" class="btn btn-danger">Confirm Dinner</a>
 	</div>
 
 </div>

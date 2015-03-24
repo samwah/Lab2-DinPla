@@ -55,8 +55,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
       sum += dish.Ingredients[key].MetricQuantity;
     }
 
-    console.log("sum:"+sum)
-    return sum.toFixed(2);
+    console.log("dish:"+sum)
+
+    return parseFloat((sum*numberOfGuests).toFixed(2));
   }
 
   this.getTotalMenuPrice = function() {
@@ -68,7 +69,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
       sum = sum + list_ingredients[ing].MetricQuantity;
     }
     console.log("TotalMenuPrice: "+sum);
-    return parseFloat(sum*numberOfGuests).toFixed(2);
+    return parseFloat((sum*numberOfGuests).toFixed(2));
   }
 
   this.addDishToMenu = function(dish) {
