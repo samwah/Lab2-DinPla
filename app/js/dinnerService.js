@@ -54,7 +54,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     }
 
     console.log("sum:"+sum)
-    return sum;
+    return sum.toFixed(2);
   }
 
   this.getTotalMenuPrice = function() {

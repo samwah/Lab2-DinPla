@@ -14,13 +14,14 @@
 		</div>
 		
 		<div class="col-md-4">
-			<h3>Ingredients</h3>
+			<h3>Ingredients <small>for {{getNumberOfGuests()}} people</small></h3>
 			<ul class="list-unstyled">
 				<li ng-repeat="ingredient in dish.Ingredients">
 					{{ingredient.MetricQuantity}} {{ingredient.MetricUnit}} {{ingredient.Name}} 
 				</li>
 			</ul>
-			<!--{{dish.Instructions}}-->
+
+			<label>Cost for this dish: </label>{{getDishPrice(dish)}} kr <!-- DET BLIR ETT ERROR FÖRST FÖR DEN INTE HINNER, HAN SNACKADE OM DET PÅ FÖRELÄSNINGEN - KOMMER INTE IHÅG HUR MAN FIXADE DET-->
 
 			<div ng-controller="DinnerCtrl">
 				<a ng-href="#/search" class="btn btn-default">Go Back</a>

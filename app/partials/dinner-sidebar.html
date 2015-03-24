@@ -15,8 +15,8 @@
 		<div ng-repeat="dish in getFullMenu()">
 			<div>
 				<a ng-href="#/dish/{{dish.RecipeID}}">{{dish.Title}}</a>
-				<!--{{getDishPrice(dish)}}-->
-				<button class="btn btn-default" ng-click="removeDishFromMenu(dish.RecipeID)">X</button>
+				{{getDishPrice(dish)}} kr
+				<button class="btn btn-danger btn-xs" ng-click="removeDishFromMenu(dish.RecipeID)">X</button>
 			</div>
 		</div>
 		<!--{{getTotalMenuPrice()}}-->
