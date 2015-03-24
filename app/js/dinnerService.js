@@ -18,7 +18,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:apiKey}); 
 
   this.setNumberOfGuests = function(number) {
-    numberOfGuests = number;
+    if(number >= 0){
+      numberOfGuests = number;
+    }
   }
 
   this.getNumberOfGuests = function() {
@@ -66,7 +68,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
       sum = sum + list_ingredients[ing].MetricQuantity;
     }
     console.log("TotalMenuPrice: "+sum);
-    return parseFloat(sum*numberOfGuests.toFixed(2));
+    return parseFloat(sum*numberOfGuests).toFixed(2);
   }
 
   this.addDishToMenu = function(dish) {

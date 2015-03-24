@@ -2,18 +2,18 @@
 <ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
 
 <!-- FIX AND CHANGE THIS -->
-<div id="search" class="col-md-10 full-height">
+<div id="search" class="col-md-9 full-height">
 
 	{{status}}
 
 	<div ng-model="dish" ng-change="fetchDish()">
-		<div class="col-md-8">
-			<img ng-src="{{dish.ImageURL}}"/>
+		<div class="col-md-6">
+			<img ng-src="{{dish.ImageURL}}" width="70%"/>
 			<h2>{{dish.Title}}</h2>
 			{{dish.Description}}
 		</div>
 		
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<h3>Ingredients <small>for {{getNumberOfGuests()}} people</small></h3>
 			<ul class="list-unstyled">
 				<li ng-repeat="ingredient in dish.Ingredients">

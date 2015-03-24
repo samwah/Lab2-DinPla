@@ -1,7 +1,7 @@
 <!-- We include the sidebar as it is shared across two screens. -->
 <ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
 
-<div id="search" class="col-md-10 full-height">
+<div id="search" class="col-md-9 full-height">
 
 	<form class="form-inline">
 		<div class="form-group">
@@ -13,10 +13,9 @@
 
 	<div class="row">
 		<div class="col-md-3" ng-repeat="dish in dishes">
-			<div><img ng-src="{{dish.ImageURL120}}"/></div>
-			{{dish.Title}}
-			<a ng-href="#/dish/{{dish.RecipeID}}">View more</a>
-			{{dish.Category}} {{dish.Subcategory}}
+			<div><a ng-href="#/dish/{{dish.RecipeID}}"><img ng-src="{{dish.ImageURL120}}"/></a></div>
+			<h4>{{dish.Title}} <small>{{dish.Category}}</small></h4>
+			 <!--{{dish.Subcategory}}-->
 		</div>
 	</div>
 

@@ -1,4 +1,4 @@
-<div id="sidebar" class="col-md-2 full-height bg-info">
+<div id="sidebar" class="col-md-3 full-height bg-info">
 
 	<label for="guestCount">Guests</label>
 	<input class="form-control" id="guestCount" type="number" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)"/>
@@ -10,16 +10,29 @@
 	this with Total price of the menu -->
 	<!--Total number of guest: {{getNumberOfGuests()}}-->
 
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Cost</th>
+				<th>Type</th>
+				<th>*</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="dish in getFullMenu()">
+				<td><a ng-href="#/dish/{{dish.RecipeID}}">{{dish.Title}}</a></td>
+				<td>{{(getDishPrice(dish)*getNumberOfGuests()).toFixed(2)}} kr</td>
+				<td>{{dish.Category}}</td>
+				<td><button class="btn btn-danger btn-xs" ng-click="removeDishFromMenu(dish.RecipeID)">X</button></td>
+			</tr>
+		</tbody>
+	</table>
+
 	<div>
-		<h4>Menu</h4>
-		<div ng-repeat="dish in getFullMenu()">
-			<div>
-				<a ng-href="#/dish/{{dish.RecipeID}}">{{dish.Title}}</a>
-				{{getDishPrice(dish)*getNumberOfGuests()}} kr
-				<button class="btn btn-danger btn-xs" ng-click="removeDishFromMenu(dish.RecipeID)">X</button>
-			</div>
-		</div>
-		<!--{{getTotalMenuPrice()}}-->
+		<a ng-href="#/overview" class="btn btn-success">Confirm Dinner</a>
 	</div>
 
 </div>
+
+

@@ -1,0 +1,29 @@
+<div id="overview" class="col-md-12 full-height bg-info">
+
+	<h2>Overview <small>with {{getNumberOfGuests()}} guests</small></h2>
+	<a ng-href="#/search" class="btn btn-default">Go back</a>
+	<a ng-href="#/search" class="btn btn-primary">Preperations</a>
+
+	<!-- TODO in Lab 5: Display the items on the menu with cost for each -->
+	<!-- Displaying number of guests both in input box and here is redundant. It is here only for the example
+	purpose so you can see how some information from the model can be retrieved. In Lab 5 you will replace 
+	this with Total price of the menu -->
+
+	<div>
+		<h3>Menu</h3>
+		<div ng-repeat="dish in getFullMenu()" class="col-md-4">
+			<div>
+				<img src="{{dish.ImageURL}}" width="50%"/>
+				<div>
+					<h3>{{dish.Title}}</h3>
+					{{dish.Description}}
+					<div>
+						{{getDishPrice(dish)*getNumberOfGuests()}} kr
+					</div>
+				</div>
+			</div>
+		</div>
+		<h3>Total price: {{getTotalMenuPrice()}} kr</h3>
+	</div>
+
+</div>
