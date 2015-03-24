@@ -1,4 +1,4 @@
-<div id="sidebar" class="col-md-2 full-height">
+<div id="sidebar" class="col-md-2 full-height bg-info">
 
 	<label for="guestCount">Guests</label>
 	<input id="guestCount" type="number" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)"/>
@@ -19,6 +19,7 @@
 				<button class="btn btn-default" ng-click="removeDishFromMenu(dish.RecipeID)">X</button>
 			</div>
 		</div>
+		<!--{{getTotalMenuPrice()}}-->
 	</div>
 
 </div>

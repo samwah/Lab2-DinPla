@@ -41,7 +41,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     var list_ingredients = [];
 
     for(key in menu){
-      list_ingredients = list_ingredients.concat(menu[key].ingredients);
+      list_ingredients = list_ingredients.concat(menu[key].Ingredients);
     }
 
     return list_ingredients;
