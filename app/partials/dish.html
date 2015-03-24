@@ -2,26 +2,33 @@
 <ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
 
 <!-- FIX AND CHANGE THIS -->
+<div id="search" class="col-md-10 full-height">
 
-{{showRoute}}
-{{status}}
+	{{status}}
 
-<div ng-model="dish" ng-change="fetchDish()">
-	<img ng-src="{{dish.ImageURL}}"/>
+	<div ng-model="dish" ng-change="fetchDish()">
+		<div class="col-md-8">
+			<img ng-src="{{dish.ImageURL}}"/>
+			<h2>{{dish.Title}}</h2>
+			{{dish.Description}}
+		</div>
+		
+		<div class="col-md-4">
+			<h3>Ingredients</h3>
+			<ul class="list-unstyled">
+				<li ng-repeat="ingredient in dish.Ingredients">
+					{{ingredient.MetricQuantity}} {{ingredient.MetricUnit}} {{ingredient.Name}} 
+				</li>
+			</ul>
+			<!--{{dish.Instructions}}-->
 
-	{{dish.Title}}</br>
-	{{dish.Description}}
-	
-	<ul>
-		<li ng-repeat="ingredient in dish.Ingredients">
-			{{ingredient.Name}} {{ingredient.MetricQuantity}} {{ingredient.MetricUnit}}
-		</li>
-	</ul>
-	{{dish.Instructions}}
-
-	<div ng-controller="DinnerCtrl">
-		<a ng-href="#/search" ng-click="addDishToMenu(dish)" class="btn btn-primary">Confirm Dish</a>
+			<div ng-controller="DinnerCtrl">
+				<a ng-href="#/search" class="btn btn-default">Go Back</a>
+				<a ng-href="#/search" ng-click="addDishToMenu(dish)" class="btn btn-success">Confirm Dish</a>
+			</div>
+		</div>
 	</div>
+
 </div>
 
 <!-- TODO in Lab 5: Display the dish information including image, Description, 
