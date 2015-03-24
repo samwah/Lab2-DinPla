@@ -3,10 +3,13 @@
 
 <div id="search" class="col-md-10 full-height">
 
-	<input id="searchbar" ng-model="query" placeholder="Search"/>
-	<button ng-click="search(query)">Find</button>
-
-	{{status}}
+	<form class="form-inline">
+		<div class="form-group">
+			<input class="form-control" id="searchbar" ng-model="query" placeholder="Search"/>
+			<button class="btn btn-primary" ng-click="search(query)">Find</button>
+		</div>
+		{{status}}
+	</form>
 
 	<div class="row">
 		<div class="col-md-3" ng-repeat="dish in dishes">
