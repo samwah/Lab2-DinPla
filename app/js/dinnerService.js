@@ -5,8 +5,8 @@
 // the next time.
 dinnerPlannerApp.factory('Dinner',function ($resource) {
   
-//var apiKey = "dvxTU5WwHw2BY5uT8iYX278xv4DXbUBP";
-  var apiKey= "dvxVMoURtQ38bKtLPt7dMRI95Tm07Lad";
+  var apiKey = "dvxTU5WwHw2BY5uT8iYX278xv4DXbUBP";
+  //var apiKey= "dvxVMoURtQ38bKtLPt7dMRI95Tm07Lad";
 
   var numberOfGuests = 2;
   var menu = [];
