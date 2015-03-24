@@ -3,6 +3,7 @@
 dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 
 	$scope.numberOfGuests = Dinner.getNumberOfGuests();
+	$scope.dishPrice = 0; //Tänkte att man kanske borde göra så denna ändras samtidigt, men det blir svårt när det finns många dishes
 
 	$scope.setNumberOfGuest = function(number) {
 	    Dinner.setNumberOfGuests(number);
