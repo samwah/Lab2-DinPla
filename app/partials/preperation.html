@@ -1,7 +1,7 @@
 <div id="overview" class="col-md-12 full-height bg-info">
 
 
-	<h2>Overview <small>with {{getNumberOfGuests()}} guests</small></h2>
+	<h2>Preperation <small>with {{getNumberOfGuests()}} guests</small></h2>
 	<!-- TODO in Lab 5: Display the items on the menu with cost for each -->
 	<!-- Displaying number of guests both in input box and here is redundant. It is here only for the example
 	purpose so you can see how some information from the model can be retrieved. In Lab 5 you will replace 
@@ -15,15 +15,16 @@
 				<div>
 					<h3>{{dish.Title}}</h3>
 					{{dish.Description}}
+					{{dish.Instructions}}
 					<div>
 						{{getDishPrice(dish)*getNumberOfGuests()}} kr
 					</div>
 				</div>
 			</div>
 		</div>
-		<h3>Total price: {{getTotalMenuPrice()}} kr</h3>
 	</div>
-	<a ng-href="#/search" class="btn btn-default text-right">Go back</a>
-	<a ng-href="#/search" class="btn btn-primary">Preperations</a>
-
+	</div>
+		<a ng-href="#/overview" class="btn btn-default text-right">Go back</a>
+		<a class="btn btn-primary">Print Instructions</a>
+	</div>
 </div>
